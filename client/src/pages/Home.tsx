@@ -1,25 +1,39 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+/*
+ * Home — Single-page scroll layout
+ * Swiss International minimalist: black on white, typographic hierarchy,
+ * thin horizontal rules between sections, generous whitespace
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
 
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
+import HeroSection from "@/components/sections/HeroSection";
+import MissionSection from "@/components/sections/MissionSection";
+import AboutSection from "@/components/sections/AboutSection";
+import TeamSection from "@/components/sections/TeamSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import ContactSection from "@/components/sections/ContactSection";
+
+export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+      <Navigation />
+
+      <main className="flex-1">
+        <HeroSection />
+        <SectionDivider />
+        <MissionSection />
+        <SectionDivider />
+        <AboutSection />
+        <SectionDivider />
+        <TeamSection />
+        <SectionDivider />
+        <ProjectsSection />
+        <SectionDivider />
+        <ContactSection />
       </main>
+
+      <Footer />
     </div>
   );
 }

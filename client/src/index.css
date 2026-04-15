@@ -1,5 +1,9 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+@import "../../node_modules/tw-animate-css/dist/tw-animate.css";
+
+@source "../../app";
+@source ".";
+@source "../../shared";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -132,14 +136,6 @@
       padding-right: 3rem;
       max-width: 1100px;
     }
-  }
-
-  .section-number {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: oklch(0.55 0 0);
   }
 
   .font-heading {

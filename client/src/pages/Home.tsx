@@ -1,12 +1,11 @@
 /*
  * Home — Single-page scroll layout
  * Swiss International minimalist: black on white, typographic hierarchy,
- * thin horizontal rules between sections, generous whitespace
+ * generous whitespace between sections
  */
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SectionDivider from "@/components/SectionDivider";
 import HeroSection from "@/components/sections/HeroSection";
 import MissionSection from "@/components/sections/MissionSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -21,15 +20,10 @@ export default function Home() {
 
       <main className="flex-1">
         <HeroSection />
-        <SectionDivider />
         <MissionSection />
-        <SectionDivider />
         <AboutSection />
-        <SectionDivider />
         <TeamSection />
-        <SectionDivider />
         <ProjectsSection />
-        <SectionDivider />
         <ContactSection />
       </main>
 

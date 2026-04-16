@@ -12,6 +12,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import OurApproachSection from "@/components/sections/OurApproachSection";
 import TeamSection from "@/components/sections/TeamSection";
+import PartnersSection from "@/components/sections/PartnersSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
 
@@ -27,6 +28,7 @@ export default function Home() {
         <AboutSection />
         <OurApproachSection />
         <TeamSection />
+        <PartnersSection />
         <ProjectsSection />
         <ContactSection />
       </main>

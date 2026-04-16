@@ -43,8 +43,8 @@ export default function MissionSection() {
                 most.
               </p>
               <p>
-                Hubs across continents have joined the project, expanding our
-                reach across languages, geographies, and communities.
+                Hubs across every continent have joined the project, expanding
+                our reach across languages, geographies, and communities.
               </p>
             </div>
           </div>

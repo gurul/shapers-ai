@@ -13,12 +13,12 @@ const steps = [
 
 export default function OurApproachSection() {
   return (
-    <section className="pt-2 pb-6 md:pt-4 md:pb-10">
+    <section className="pt-8 pb-12 md:pt-10 md:pb-16">
       <div className="container">
-        <div className="grid items-center gap-8 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-12">
-          <div className="mx-auto w-full max-w-[280px] lg:max-w-[420px]">
+        <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
+          <div className="mx-auto w-full max-w-[196px] lg:max-w-[294px]">
             <Image
-              src="/approach-image.png"
+              src="/magnifying-glass.png"
               alt="Our approach"
               width={768}
               height={768}
@@ -34,7 +34,7 @@ export default function OurApproachSection() {
               Our approach
             </h2>
 
-            <ol className="mt-8 space-y-4">
+            <ol className="mt-8 space-y-6">
               {steps.map((step, i) => (
                 <li key={step} className="flex items-start gap-4">
                   <span

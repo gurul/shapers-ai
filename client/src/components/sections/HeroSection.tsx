@@ -8,16 +8,17 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="pt-14">
-      <div className="container pt-8 pb-10 md:pt-10 md:pb-12">
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] lg:gap-12">
+    <section id="home" className="scroll-mt-20 pt-14">
+      <div className="container flex min-h-[calc(100svh-3.5rem)] items-center pt-8 pb-10 md:pt-10 md:pb-12">
+        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,640px)] lg:gap-14">
           <div>
             {/* Headline */}
             <h1
               className="max-w-3xl text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.5rem]"
               style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
             >
-              We build tech for organizations that can't afford it yet.
+              Building technology for the businesses that power our
+              communities
             </h1>
 
             {/* Subheadline */}
@@ -37,9 +38,9 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <div className="mx-auto w-full max-w-[560px] lg:mx-0">
-            <div className="relative mx-auto aspect-[11/10] w-full max-w-[560px]">
-              <div className="absolute left-[4%] top-[3%] w-[78%] -rotate-[5deg] transform drop-shadow-[0_24px_40px_rgba(0,0,0,0.16)]">
+          <div className="mx-auto w-full max-w-[640px] lg:mx-0">
+            <div className="relative mx-auto aspect-[11/10] w-full max-w-[640px]">
+              <div className="absolute left-[2%] top-[1%] w-[82%] -rotate-[5deg] transform drop-shadow-[0_24px_40px_rgba(0,0,0,0.16)]">
                 <Image
                   src="/hero-storefront.png"
                   alt="Illustration of a small storefront with product signage"
@@ -50,7 +51,7 @@ export default function HeroSection() {
                 />
               </div>
 
-              <div className="absolute bottom-[4%] right-[2%] z-10 w-[56%] rotate-[6deg] transform drop-shadow-[0_24px_40px_rgba(0,0,0,0.2)]">
+              <div className="absolute bottom-[2%] right-0 z-10 w-[60%] rotate-[6deg] transform drop-shadow-[0_24px_40px_rgba(0,0,0,0.2)]">
                 <Image
                   src="/hero-upcycle-shop.png"
                   alt="Illustration of an upcycled clothing storefront"
@@ -60,7 +61,6 @@ export default function HeroSection() {
                   priority
                 />
               </div>
-
             </div>
           </div>
         </div>

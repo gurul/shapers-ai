@@ -7,9 +7,9 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="pt-6 pb-2 md:pt-10 md:pb-4">
+    <section id="about" className="scroll-mt-20 pt-12 pb-8 md:pt-16 md:pb-10">
       <div className="container">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
           <div className="flex-1">
           <h2
             className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
@@ -18,7 +18,7 @@ export default function AboutSection() {
             The Philosophy
           </h2>
 
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-black md:text-[1.05rem]">
+          <div className="mt-8 space-y-7 text-base leading-relaxed text-black md:text-[1.08rem]">
             <p>
               Most AI conversations revolve around billion-dollar infrastructure
               and enterprise SaaS. Meanwhile, the restaurant down the street
@@ -35,7 +35,7 @@ export default function AboutSection() {
 
           </div>
 
-          <div className="hidden lg:block flex-shrink-0 lg:w-[360px]">
+          <div className="hidden lg:block flex-shrink-0 lg:w-[400px]">
             <Image
               src="/mission-globe.png"
               alt="Illustration of the globe"

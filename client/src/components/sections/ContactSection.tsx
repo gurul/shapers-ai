@@ -31,7 +31,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-6 md:py-10">
+    <section id="contact" className="scroll-mt-20 py-12 md:py-16">
       <div className="container">
         <div className="w-full">
           <div className="text-center">
@@ -50,7 +50,7 @@ export default function ContactSection() {
 
           <form
             onSubmit={handleSubmit}
-            className="mx-auto mt-12 grid w-full max-w-4xl gap-x-10 gap-y-8 md:grid-cols-2"
+            className="mx-auto mt-14 grid w-full max-w-4xl gap-x-12 gap-y-10 md:grid-cols-2"
           >
             {/* Email */}
             <div>

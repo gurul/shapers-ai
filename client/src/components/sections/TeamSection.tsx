@@ -17,10 +17,12 @@ const teamMembers: TeamMember[] = [
   {
     name: "Rachel Kloepfer",
     linkedin: "https://www.linkedin.com/in/rachelkloepfer/",
+    photo: "/headshot-rachel.png",
   },
   {
     name: "Shubhkarman Singh",
     linkedin: "https://www.linkedin.com/in/singh-shubhkarman/",
+    photo: "/headshot-shubhkarman.png",
   },
   {
     name: "Gurucharan Lingamallu",
@@ -40,7 +42,7 @@ function getInitials(name: string) {
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-6 md:py-10">
+    <section id="team" className="scroll-mt-20 py-12 md:py-16">
       <div className="container">
         <div className="w-full">
           <div className="text-center">
@@ -52,20 +54,20 @@ export default function TeamSection() {
             </h2>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map(member => (
               <div
                 key={member.name}
                 className="flex w-full flex-col items-center text-center"
               >
                 {/* Avatar: photo if available, else initials */}
-                <div className="mb-4 flex h-64 w-64 items-center justify-center overflow-hidden bg-black/5">
+                <div className="mb-5 flex h-72 w-72 items-center justify-center overflow-hidden bg-black/5">
                   {member.photo ? (
                     <Image
                       src={member.photo}
                       alt={member.name}
-                      width={256}
-                      height={256}
+                      width={288}
+                      height={288}
                       className="h-full w-full object-cover"
                     />
                   ) : (

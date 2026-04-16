@@ -9,6 +9,24 @@ import "../client/src/index.css";
 export const metadata: Metadata = {
   title: "shapers.ai",
   description: "Volunteer-built AI and software solutions for organizations.",
+  openGraph: {
+    title: "shapers.ai",
+    description: "Volunteer-built AI and software solutions for organizations.",
+    images: [
+      {
+        url: "/preview-image.png",
+        width: 1920,
+        height: 1080,
+        alt: "shapers.ai preview image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "shapers.ai",
+    description: "Volunteer-built AI and software solutions for organizations.",
+    images: ["/preview-image.png"],
+  },
 };
 
 interface RootLayoutProps {

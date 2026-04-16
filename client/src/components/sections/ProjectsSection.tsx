@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-6 md:py-10">
+    <section id="projects" className="scroll-mt-20 py-12 md:py-16">
       <div className="container">
         <div className="w-full">
           <div className="text-center">
@@ -19,7 +19,7 @@ export default function ProjectsSection() {
             </h2>
           </div>
 
-          <div className="mt-12 flex min-h-80 w-full flex-col items-center justify-center border border-border py-16">
+          <div className="mt-14 flex min-h-96 w-full flex-col items-center justify-center border border-border py-20">
             <Loader2 size={20} className="animate-spin text-muted-foreground" />
             <p className="mt-4 text-sm text-muted-foreground">Coming soon</p>
           </div>

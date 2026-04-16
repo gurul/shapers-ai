@@ -37,7 +37,10 @@ export default function ContactSection() {
           <div className="text-center">
             <h2
               className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
-              style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
+              style={{
+                fontFamily: "'Space Grotesk', system-ui, sans-serif",
+                color: "#19498a",
+              }}
             >
               Work With Us
             </h2>
@@ -115,8 +118,17 @@ export default function ContactSection() {
             {/* Submit */}
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-black px-6 py-3 text-sm font-medium tracking-wide text-white transition-colors duration-200 hover:bg-black/85 md:col-span-2 md:justify-self-center"
-              style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium tracking-wide text-white transition-colors duration-200 md:col-span-2 md:justify-self-center"
+              style={{
+                fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
+                backgroundColor: "#19498a",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.backgroundColor = "#143b70";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.backgroundColor = "#19498a";
+              }}
             >
               Send message
               <ArrowRight size={16} />

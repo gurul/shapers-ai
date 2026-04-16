@@ -24,8 +24,11 @@ export default function Navigation() {
         {/* Logo */}
         <a
           href="#home"
-          className="font-heading text-lg font-bold tracking-tight text-black no-underline"
-          style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
+          className="font-heading text-lg font-bold tracking-tight no-underline"
+          style={{
+            fontFamily: "'Space Grotesk', system-ui, sans-serif",
+            color: "#19498a",
+          }}
         >
           shapers.ai
         </a>
@@ -36,8 +39,17 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-black/60 hover:text-black transition-colors duration-200 no-underline"
-              style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
+              className="text-sm transition-colors duration-200 no-underline"
+              style={{
+                fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
+                color: "rgba(25, 73, 138, 0.72)",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.color = "#19498a";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.color = "rgba(25, 73, 138, 0.72)";
+              }}
             >
               {link.label}
             </a>
@@ -49,6 +61,7 @@ export default function Navigation() {
           className="md:hidden p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          style={{ color: "#19498a" }}
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -62,8 +75,17 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-black/60 hover:text-black transition-colors duration-200 no-underline"
-                style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
+                className="text-sm transition-colors duration-200 no-underline"
+                style={{
+                  fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
+                  color: "rgba(25, 73, 138, 0.72)",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = "#19498a";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = "rgba(25, 73, 138, 0.72)";
+                }}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

@@ -12,10 +12,10 @@ export default function MissionSection() {
         <div className="grid items-center gap-12 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
           <div className="mx-auto w-full max-w-[320px] lg:max-w-[476px]">
             <Image
-              src="/about-image.png"
-              alt="Shapers AI"
-              width={768}
-              height={768}
+              src="/philosophy-globalization-cuate.png"
+              alt="Illustration representing global collaboration"
+              width={2000}
+              height={2000}
               className="h-auto w-full"
             />
           </div>

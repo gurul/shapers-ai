@@ -32,11 +32,15 @@ export default function ScrollProgress() {
   return (
     <div
       aria-hidden="true"
-      className="fixed top-14 left-0 z-40 h-0.5 w-full bg-black/8"
+      className="fixed top-14 left-0 z-40 h-0.5 w-full"
+      style={{ backgroundColor: "rgba(25, 73, 138, 0.12)" }}
     >
       <div
-        className="h-full origin-left bg-black transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
-        style={{ transform: `scaleX(${progress})` }}
+        className="h-full origin-left transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        style={{
+          transform: `scaleX(${progress})`,
+          backgroundColor: "#19498a",
+        }}
       />
     </div>
   );

@@ -13,7 +13,10 @@ export default function AboutSection() {
           <div className="order-1 flex-1">
             <h2
               className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
-              style={{ fontFamily: "'Outfit', system-ui, sans-serif" }}
+              style={{
+                fontFamily: "'Outfit', system-ui, sans-serif",
+                color: "#19498a",
+              }}
             >
               The Philosophy
             </h2>
@@ -36,10 +39,10 @@ export default function AboutSection() {
 
           <div className="order-2 mx-auto w-full max-w-[260px] lg:mx-0 lg:w-[400px] lg:max-w-none">
             <Image
-              src="/earthie.png"
-              alt="Illustration of the globe"
-              width={840}
-              height={840}
+              src="/philosophy-globalization-cuate.png"
+              alt="Illustration representing global collaboration"
+              width={2000}
+              height={2000}
               className="h-auto w-full object-contain"
             />
           </div>

@@ -18,10 +18,10 @@ export default function OurApproachSection() {
         <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
           <div className="order-2 mx-auto w-full max-w-[196px] lg:order-1 lg:max-w-[294px]">
             <Image
-              src="/magnifying-glass.png"
-              alt="Our approach"
-              width={768}
-              height={768}
+              src="/approach-reading-glasses-cuate.png"
+              alt="Illustration of reading glasses and a book"
+              width={2000}
+              height={2000}
               className="h-auto w-full max-h-[320px] object-contain lg:max-h-none"
             />
           </div>
@@ -29,7 +29,10 @@ export default function OurApproachSection() {
           <div className="order-1 lg:order-2">
             <h2
               className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
-              style={{ fontFamily: "'Outfit', system-ui, sans-serif" }}
+              style={{
+                fontFamily: "'Outfit', system-ui, sans-serif",
+                color: "#19498a",
+              }}
             >
               Our approach
             </h2>

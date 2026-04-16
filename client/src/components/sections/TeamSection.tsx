@@ -48,7 +48,10 @@ export default function TeamSection() {
           <div className="text-center">
             <h2
               className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
-              style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
+              style={{
+                fontFamily: "'Space Grotesk', system-ui, sans-serif",
+                color: "#19498a",
+              }}
             >
               The Team
             </h2>

@@ -10,12 +10,12 @@ export default function Footer() {
   const lastUpdated = process.env.NEXT_PUBLIC_LAST_UPDATED ?? "Unavailable";
 
   return (
-    <footer className="text-white" style={{ backgroundColor: "#111111" }}>
+    <footer className="text-foreground">
       <div className="container py-8 sm:py-10 lg:py-12">
         <div>
           <div className="max-w-xs">
             <p
-              className="text-xs uppercase tracking-[0.18em] text-white/45"
+              className="text-xs uppercase tracking-[0.18em] text-foreground/45"
               style={{ fontFamily: "'IBM Plex Mono', monospace" }}
             >
               Connect
@@ -25,7 +25,7 @@ export default function Footer() {
                 href="https://www.instagram.com/shapers.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-sm text-white/72 transition-colors duration-200 no-underline hover:text-white"
+                className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
                 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
               >
                 <Instagram size={16} />
@@ -35,7 +35,7 @@ export default function Footer() {
                 href="https://www.seattleshapers.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-sm text-white/72 transition-colors duration-200 no-underline hover:text-white"
+                className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
                 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
               >
                 <ExternalLink size={16} />
@@ -45,7 +45,7 @@ export default function Footer() {
                 href="https://www.globalshapers.org/home"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-sm text-white/72 transition-colors duration-200 no-underline hover:text-white"
+                className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
                 style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
               >
                 <ExternalLink size={16} />
@@ -57,19 +57,19 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="flex flex-col gap-1.5">
-            <p className="text-sm text-white/62">
+            <p className="text-sm text-foreground/62">
               Made with ❤ in Seattle
             </p>
-            <p className="text-xs text-white/45">
+            <p className="text-xs text-foreground/45">
               Last updated: {lastUpdated}
             </p>
           </div>
 
           <Image
-            src="/shapers-logo.png"
-            alt="Shapers AI"
-            width={768}
-            height={768}
+            src="/footer-global-shapers.png"
+            alt="Global Shapers"
+            width={1080}
+            height={1080}
             className="h-auto w-full max-w-[88px] self-end sm:max-w-[112px] lg:max-w-[128px]"
             priority
           />

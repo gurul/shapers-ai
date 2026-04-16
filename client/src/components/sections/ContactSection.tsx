@@ -27,11 +27,6 @@ export default function ContactSection() {
           </div>
 
           <div className="mx-auto mt-14 flex w-full max-w-2xl flex-col items-center gap-6 text-center">
-            <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              Our intake form collects all the details we need to understand
-              your project, business, or interest in contributing.
-            </p>
-
             <Button
               asChild
               size="lg"

@@ -1,6 +1,6 @@
 /*
  * Navigation — Swiss minimalist style
- * Fixed top nav, pure black on white, thin bottom border
+ * Fixed top nav, pure black on white
  * Logo left, links right, hamburger on mobile
  */
 
@@ -19,7 +19,7 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background">
       <div className="container flex items-center justify-between h-14">
         {/* Logo */}
         <a
@@ -56,7 +56,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-white">
+        <div className="md:hidden border-t border-border bg-background">
           <div className="container py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a

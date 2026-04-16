@@ -1,23 +1,32 @@
 /*
  * TeamSection — Swiss minimalist
- * Placeholder team member cards with initials circle + LinkedIn button
+ * Team roster with initials avatar + LinkedIn link
  */
 
+import Image from "next/image";
 import { Linkedin } from "lucide-react";
 
 interface TeamMember {
   name: string;
-  role: string;
+  role?: string;
   linkedin?: string;
+  photo?: string;
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "Team Member", role: "Role", linkedin: "#" },
-  { name: "Team Member", role: "Role", linkedin: "#" },
-  { name: "Team Member", role: "Role", linkedin: "#" },
-  { name: "Team Member", role: "Role", linkedin: "#" },
-  { name: "Team Member", role: "Role", linkedin: "#" },
-  { name: "Team Member", role: "Role", linkedin: "#" },
+  {
+    name: "Rachel Kloepfer",
+    linkedin: "https://www.linkedin.com/in/rachelkloepfer/",
+  },
+  {
+    name: "Shubhkarman Singh",
+    linkedin: "https://www.linkedin.com/in/singh-shubhkarman/",
+  },
+  {
+    name: "Gurucharan Lingamallu",
+    linkedin: "https://www.linkedin.com/in/gurul/",
+    photo: "/headshot-guru.png",
+  },
 ];
 
 function getInitials(name: string) {
@@ -31,7 +40,7 @@ function getInitials(name: string) {
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-16 md:py-24">
+    <section id="team" className="py-6 md:py-10">
       <div className="container">
         <div className="w-full">
           <div className="text-center">
@@ -43,20 +52,30 @@ export default function TeamSection() {
             </h2>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-            {teamMembers.map((member, i) => (
+          <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {teamMembers.map(member => (
               <div
-                key={i}
+                key={member.name}
                 className="flex w-full flex-col items-center text-center"
               >
-                {/* Avatar circle with initials */}
-                <div className="mb-4 flex h-16 w-16 items-center justify-center bg-black/5">
-                  <span
-                    className="text-sm font-medium text-muted-foreground"
-                    style={{ fontFamily: "'IBM Plex Mono', monospace" }}
-                  >
-                    {getInitials(member.name)}
-                  </span>
+                {/* Avatar: photo if available, else initials */}
+                <div className="mb-4 flex h-64 w-64 items-center justify-center overflow-hidden bg-black/5">
+                  {member.photo ? (
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={256}
+                      height={256}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <span
+                      className="text-sm font-medium text-muted-foreground"
+                      style={{ fontFamily: "'Inter', sans-serif" }}
+                    >
+                      {getInitials(member.name)}
+                    </span>
+                  )}
                 </div>
 
                 <p
@@ -67,9 +86,11 @@ export default function TeamSection() {
                 >
                   {member.name}
                 </p>
-                <p className="mt-0.5 text-xs text-muted-foreground">
-                  {member.role}
-                </p>
+                {member.role ? (
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {member.role}
+                  </p>
+                ) : null}
 
                 {member.linkedin && (
                   <a

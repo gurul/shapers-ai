@@ -31,7 +31,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="py-6 md:py-10">
       <div className="container">
         <div className="w-full">
           <div className="text-center">
@@ -42,7 +42,7 @@ export default function ContactSection() {
               Work With Us
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-black">
               Whether you&apos;re a business owner looking for help or a
               professional looking to contribute, this is where it starts.
             </p>

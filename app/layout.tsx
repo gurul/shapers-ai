@@ -8,8 +8,7 @@ import "../client/src/index.css";
 
 export const metadata: Metadata = {
   title: "shapers.ai",
-  description:
-    "Volunteer-built AI and software solutions for small businesses.",
+  description: "Volunteer-built AI and software solutions for organizations.",
 };
 
 interface RootLayoutProps {
@@ -30,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>

@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-16 md:py-24">
+    <section id="projects" className="py-6 md:py-10">
       <div className="container">
         <div className="w-full">
           <div className="text-center">

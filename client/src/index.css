@@ -44,18 +44,18 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
-  --font-heading: 'Space Grotesk', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-mono: monospace;
 }
 
 :root {
   --radius: 0px;
-  --background: oklch(1 0 0);
+  --background: #efede4;
   --foreground: oklch(0 0 0);
-  --card: oklch(1 0 0);
+  --card: #efede4;
   --card-foreground: oklch(0 0 0);
-  --popover: oklch(1 0 0);
+  --popover: #efede4;
   --popover-foreground: oklch(0 0 0);
   --primary: oklch(0 0 0);
   --primary-foreground: oklch(1 0 0);
@@ -75,7 +75,7 @@
   --chart-3: oklch(0.5 0 0);
   --chart-4: oklch(0.7 0 0);
   --chart-5: oklch(0.85 0 0);
-  --sidebar: oklch(1 0 0);
+  --sidebar: #efede4;
   --sidebar-foreground: oklch(0 0 0);
   --sidebar-primary: oklch(0 0 0);
   --sidebar-primary-foreground: oklch(1 0 0);
@@ -86,11 +86,18 @@
 }
 
 @layer base {
+  html {
+    background-color: var(--background);
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    background-color: var(--background);
+    min-height: 100vh;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -102,10 +109,6 @@
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
-  }
-
-  html {
-    scroll-behavior: smooth;
   }
 }
 
@@ -139,6 +142,6 @@
   }
 
   .font-heading {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
   }
 }

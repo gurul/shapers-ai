@@ -51,7 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body style={{ backgroundColor: "#ffffff" }}>
         <Providers>{children}</Providers>
         {process.env.NODE_ENV !== "production" ? (
           <Script

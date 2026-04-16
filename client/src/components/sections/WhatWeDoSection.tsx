@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function WhatWeDoSection() {
   return (
-    <section className="bg-background py-12 md:py-16">
+    <section className="bg-white py-12 md:py-16" style={{ backgroundColor: "#ffffff" }}>
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
           <div className="order-2 mx-auto w-full max-w-[320px] lg:order-1 lg:max-w-[440px]">

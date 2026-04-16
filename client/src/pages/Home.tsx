@@ -17,7 +17,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-white" style={{ backgroundColor: "#ffffff" }}>
       <Navigation />
       <ScrollProgress />
 

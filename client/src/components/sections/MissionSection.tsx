@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function MissionSection() {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-white py-16 md:py-24" style={{ backgroundColor: "#ffffff" }}>
       <div className="container">
         <div className="grid items-center gap-12 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
           <div className="mx-auto w-full max-w-[320px] lg:max-w-[476px]">

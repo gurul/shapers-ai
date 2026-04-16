@@ -26,7 +26,7 @@ export default function ContactSection() {
             </p>
           </div>
 
-          <div className="mx-auto mt-14 flex w-full max-w-2xl flex-col items-center gap-6 text-center">
+          <div className="mx-auto mt-8 flex w-full max-w-2xl flex-col items-center gap-6 text-center md:mt-10">
             <Button
               asChild
               size="lg"

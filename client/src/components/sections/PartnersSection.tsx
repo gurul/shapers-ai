@@ -32,28 +32,17 @@ export default function PartnersSection() {
 
           <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-8">
             {partners.map(partner => (
-              <div
-                key={partner.name}
-                className="flex flex-col items-center rounded-sm border border-black/10 bg-white px-6 py-8 text-center shadow-sm"
-              >
-                <div className="flex min-h-52 w-full items-center justify-center">
+              <div key={partner.name} className="flex flex-col items-center px-6 py-2 text-center">
+                <div className="flex min-h-32 w-full items-center justify-center">
                   <Image
                     src={partner.logo}
                     alt={partner.alt}
                     width={960}
                     height={960}
-                    className="h-auto w-full max-w-xl object-contain"
+                    className="h-auto w-full max-w-[40%] min-w-[160px] object-contain"
                   />
                 </div>
 
-                <p
-                  className="mt-6 text-sm font-semibold"
-                  style={{
-                    fontFamily: "'Space Grotesk', system-ui, sans-serif",
-                  }}
-                >
-                  {partner.name}
-                </p>
               </div>
             ))}
           </div>

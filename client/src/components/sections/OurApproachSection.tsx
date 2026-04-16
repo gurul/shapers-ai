@@ -16,7 +16,7 @@ export default function OurApproachSection() {
     <section className="pt-8 pb-12 md:pt-10 md:pb-16">
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
-          <div className="mx-auto w-full max-w-[196px] lg:max-w-[294px]">
+          <div className="order-2 mx-auto w-full max-w-[196px] lg:order-1 lg:max-w-[294px]">
             <Image
               src="/magnifying-glass.png"
               alt="Our approach"
@@ -26,7 +26,7 @@ export default function OurApproachSection() {
             />
           </div>
 
-          <div>
+          <div className="order-1 lg:order-2">
             <h2
               className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
               style={{ fontFamily: "'Outfit', system-ui, sans-serif" }}

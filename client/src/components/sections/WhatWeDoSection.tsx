@@ -10,7 +10,7 @@ export default function WhatWeDoSection() {
     <section className="bg-background py-12 md:py-16">
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
-          <div className="mx-auto w-full max-w-[320px] lg:max-w-[440px]">
+          <div className="order-2 mx-auto w-full max-w-[320px] lg:order-1 lg:max-w-[440px]">
             <Image
               src="/about-image.png"
               alt="Shapers AI"
@@ -20,7 +20,7 @@ export default function WhatWeDoSection() {
             />
           </div>
 
-          <div className="max-w-2xl">
+          <div className="order-1 max-w-2xl lg:order-2">
             <h2
               className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
               style={{ fontFamily: "'Outfit', system-ui, sans-serif" }}

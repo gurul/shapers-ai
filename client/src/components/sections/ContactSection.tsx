@@ -1,35 +1,10 @@
-/*
- * ContactSection — Swiss minimalist
- * Simple contact form: email, subject, message
- * Uses mailto: as a lightweight approach (no backend)
- */
-
-import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+
+const intakeFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeVM9uu-CleZjeE63uXoYMl--LrcQfjw6j1rCIeQSwHtUYX_g/viewform?usp=publish-editor";
 
 export default function ContactSection() {
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!email || !subject || !message) {
-      toast.error("Please fill in all fields.");
-      return;
-    }
-
-    // Open mailto link
-    const mailtoLink = `mailto:contact@shapers.ai?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
-    window.location.href = mailtoLink;
-
-    toast.success("Opening your email client...");
-  };
-
   return (
     <section id="contact" className="scroll-mt-20 py-12 md:py-16">
       <div className="container">
@@ -51,89 +26,27 @@ export default function ContactSection() {
             </p>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="mx-auto mt-14 grid w-full max-w-4xl gap-x-12 gap-y-10 md:grid-cols-2"
-          >
-            {/* Email */}
-            <div>
-              <label
-                htmlFor="email"
-                className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
-                style={{ fontFamily: "'IBM Plex Mono', monospace" }}
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                required
-                placeholder="you@example.com"
-                className="w-full border-b border-border bg-transparent py-2 text-sm text-foreground transition-colors duration-200 placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none"
-              />
-            </div>
+          <div className="mx-auto mt-14 flex w-full max-w-2xl flex-col items-center gap-6 text-center">
+            <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              Our intake form collects all the details we need to understand
+              your project, business, or interest in contributing.
+            </p>
 
-            {/* Subject */}
-            <div>
-              <label
-                htmlFor="subject"
-                className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
-                style={{ fontFamily: "'IBM Plex Mono', monospace" }}
-              >
-                Subject
-              </label>
-              <input
-                id="subject"
-                type="text"
-                value={subject}
-                onChange={e => setSubject(e.target.value)}
-                required
-                placeholder="What's this about?"
-                className="w-full border-b border-border bg-transparent py-2 text-sm text-foreground transition-colors duration-200 placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none"
-              />
-            </div>
-
-            {/* Message */}
-            <div className="md:col-span-2">
-              <label
-                htmlFor="message"
-                className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground"
-                style={{ fontFamily: "'IBM Plex Mono', monospace" }}
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                value={message}
-                onChange={e => setMessage(e.target.value)}
-                required
-                rows={5}
-                placeholder="Tell us how we can help, or how you'd like to contribute."
-                className="w-full resize-none border-b border-border bg-transparent py-2 text-sm text-foreground transition-colors duration-200 placeholder:text-muted-foreground/50 focus:border-foreground focus:outline-none"
-              />
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium tracking-wide text-white transition-colors duration-200 md:col-span-2 md:justify-self-center"
+            <Button
+              asChild
+              size="lg"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium tracking-wide text-white"
               style={{
                 fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
                 backgroundColor: "#19498a",
               }}
-              onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = "#143b70";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = "#19498a";
-              }}
             >
-              Send message
-              <ArrowRight size={16} />
-            </button>
-          </form>
+              <a href={intakeFormUrl} target="_blank" rel="noreferrer">
+                Open intake form
+                <ArrowRight size={16} />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const intakeFormUrl =
+const contactFormUrl =
   "https://docs.google.com/forms/d/e/1FAIpQLSeVM9uu-CleZjeE63uXoYMl--LrcQfjw6j1rCIeQSwHtUYX_g/viewform?usp=publish-editor";
 
 export default function ContactSection() {
@@ -36,8 +36,8 @@ export default function ContactSection() {
                 backgroundColor: "#19498a",
               }}
             >
-              <a href={intakeFormUrl} target="_blank" rel="noreferrer">
-                Open intake form
+              <a href={contactFormUrl} target="_blank" rel="noreferrer">
+                Get started
                 <ArrowRight size={16} />
               </a>
             </Button>

@@ -14,10 +14,7 @@ export default function Footer() {
       <div className="container py-8 sm:py-10 lg:py-12">
         <div>
           <div className="max-w-xs">
-            <p
-              className="text-xs uppercase tracking-[0.18em] text-foreground/45"
-              style={{ fontFamily: "'IBM Plex Mono', monospace" }}
-            >
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-foreground/45">
               Connect
             </p>
             <div className="mt-3 flex flex-col gap-3">
@@ -26,7 +23,6 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
-                style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
               >
                 <Instagram size={16} />
                 Instagram
@@ -36,7 +32,6 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
-                style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
               >
                 <ExternalLink size={16} />
                 Seattle Shapers
@@ -46,7 +41,6 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
-                style={{ fontFamily: "'IBM Plex Sans', system-ui, sans-serif" }}
               >
                 <ExternalLink size={16} />
                 Global Shapers

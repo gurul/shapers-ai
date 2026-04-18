@@ -6,28 +6,34 @@
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
 
+import { ACCENT_FOREST_GREEN } from "@/const";
+
 interface TeamMember {
   name: string;
   role?: string;
   linkedin?: string;
   photo?: string;
+  imagePosition?: string;
 }
 
 const teamMembers: TeamMember[] = [
   {
     name: "Rachel Kloepfer",
     linkedin: "https://www.linkedin.com/in/rachelkloepfer/",
-    photo: "/headshot-rachel.png",
+    photo: "/team-rachel.png",
+    imagePosition: "center top",
   },
   {
     name: "Shubhkarman Singh",
     linkedin: "https://www.linkedin.com/in/singh-shubhkarman/",
-    photo: "/headshot-shubhkarman.png",
+    photo: "/team-karman.png",
+    imagePosition: "center top",
   },
   {
     name: "Gurucharan Lingamallu",
     linkedin: "https://www.linkedin.com/in/gurul/",
-    photo: "/headshot-guru.png",
+    photo: "/team-guru.png",
+    imagePosition: "center 18%",
   },
 ];
 
@@ -47,66 +53,69 @@ export default function TeamSection() {
         <div className="w-full">
           <div className="text-center">
             <h2
-              className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
-              style={{
-                fontFamily: "'Space Grotesk', system-ui, sans-serif",
-                color: "#19498a",
-              }}
+              className="font-serif text-2xl font-medium tracking-tight sm:text-3xl md:text-4xl"
+              style={{ color: ACCENT_FOREST_GREEN }}
             >
               The Team
             </h2>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map(member => (
               <div
                 key={member.name}
-                className="flex w-full flex-col items-center text-center"
+                className="flex h-full w-full flex-col rounded-[28px] border border-black/5 bg-white p-6 text-left shadow-[0_18px_40px_rgba(0,0,0,0.05)]"
               >
-                {/* Avatar: photo if available, else initials */}
-                <div className="mb-5 flex h-72 w-72 items-center justify-center overflow-hidden bg-black/5">
-                  {member.photo ? (
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      width={288}
-                      height={288}
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <span
-                      className="text-sm font-medium text-muted-foreground"
-                      style={{ fontFamily: "'Inter', sans-serif" }}
-                    >
-                      {getInitials(member.name)}
-                    </span>
-                  )}
+                <div className="overflow-hidden rounded-[24px] border border-black/5 bg-black/5">
+                  <div className="relative aspect-[4/5] w-full">
+                    {member.photo ? (
+                      <Image
+                        src={member.photo}
+                        alt={member.name}
+                        fill
+                        sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 90vw"
+                        className="object-cover"
+                        style={{ objectPosition: member.imagePosition ?? "center" }}
+                      />
+                    ) : (
+                      <div
+                        className="flex h-full w-full items-center justify-center font-serif text-3xl font-medium"
+                        style={{ color: ACCENT_FOREST_GREEN }}
+                      >
+                        {getInitials(member.name)}
+                      </div>
+                    )}
+                  </div>
                 </div>
 
-                <p
-                  className="text-sm font-semibold"
-                  style={{
-                    fontFamily: "'Space Grotesk', system-ui, sans-serif",
-                  }}
-                >
-                  {member.name}
-                </p>
-                {member.role ? (
-                  <p className="mt-0.5 text-xs text-muted-foreground">
-                    {member.role}
+                <div className="pt-5">
+                  <p
+                    className="font-serif text-lg font-medium leading-snug"
+                    style={{ color: ACCENT_FOREST_GREEN }}
+                  >
+                    {member.name}
                   </p>
-                ) : null}
+                  {member.role ? (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {member.role}
+                    </p>
+                  ) : null}
+                </div>
 
                 {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 text-muted-foreground transition-colors duration-200 hover:text-foreground"
-                    aria-label={`${member.name} LinkedIn`}
-                  >
-                    <Linkedin size={14} />
-                  </a>
+                  <div className="mt-auto pt-6">
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium no-underline transition-opacity duration-200 hover:opacity-75"
+                      aria-label={`${member.name} LinkedIn`}
+                      style={{ color: ACCENT_FOREST_GREEN }}
+                    >
+                      <Linkedin size={16} />
+                      LinkedIn
+                    </a>
+                  </div>
                 )}
               </div>
             ))}

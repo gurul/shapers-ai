@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react";
 
+import {
+  ACCENT_FOREST_GREEN,
+  ACCENT_FOREST_GREEN_TINT,
+} from "@/const";
+
 export default function ScrollProgress() {
   const [progress, setProgress] = useState(0);
 
@@ -33,13 +38,13 @@ export default function ScrollProgress() {
     <div
       aria-hidden="true"
       className="fixed top-14 left-0 z-40 h-0.5 w-full"
-      style={{ backgroundColor: "rgba(25, 73, 138, 0.12)" }}
+      style={{ backgroundColor: ACCENT_FOREST_GREEN_TINT }}
     >
       <div
         className="h-full origin-left transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
           transform: `scaleX(${progress})`,
-          backgroundColor: "#19498a",
+          backgroundColor: ACCENT_FOREST_GREEN,
         }}
       />
     </div>

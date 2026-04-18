@@ -15,10 +15,14 @@ import TeamSection from "@/components/sections/TeamSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import { APP_BACKGROUND } from "@/const";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-white" style={{ backgroundColor: "#ffffff" }}>
+    <div
+      className="min-h-screen flex flex-col bg-background"
+      style={{ backgroundColor: APP_BACKGROUND }}
+    >
       <Navigation />
       <ScrollProgress />
 

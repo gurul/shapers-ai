@@ -15,14 +15,16 @@ export default function MissionSection() {
     >
       <div className="container">
         <div className="grid items-center gap-12 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
-          <div className="mx-auto w-full max-w-[320px] lg:max-w-[476px]">
-            <Image
-              src="/philosophy-globalization-cuate.png"
-              alt="Illustration representing global collaboration"
-              width={2000}
-              height={2000}
-              className="h-auto w-full"
-            />
+          <div className="mx-auto w-full lg:max-w-[476px]">
+            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[28px] lg:aspect-auto lg:rounded-none">
+              <Image
+                src="/philosophy-globalization-cuate.png"
+                alt="Illustration representing global collaboration"
+                width={2000}
+                height={2000}
+                className="h-full w-full object-cover lg:h-auto lg:object-contain"
+              />
+            </div>
           </div>
 
           <div className="max-w-2xl md:ml-auto md:text-right">

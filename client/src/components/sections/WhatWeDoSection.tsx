@@ -15,14 +15,16 @@ export default function WhatWeDoSection() {
     >
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
-          <div className="order-2 mx-auto w-full max-w-[320px] lg:order-1 lg:max-w-[440px]">
-            <Image
-              src="/what-photo.png"
-              alt="Amazon Spheres in Seattle"
-              width={1080}
-              height={1080}
-              className="h-auto w-full rounded-[28px] max-h-[320px] object-contain lg:max-h-none"
-            />
+          <div className="order-2 w-full lg:order-1 lg:max-w-[440px]">
+            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[28px] lg:aspect-auto">
+              <Image
+                src="/what-photo.png"
+                alt="Amazon Spheres in Seattle"
+                width={1080}
+                height={1080}
+                className="h-full w-full object-cover lg:h-auto lg:rounded-[28px]"
+              />
+            </div>
           </div>
 
           <div className="order-1 max-w-2xl lg:order-2">

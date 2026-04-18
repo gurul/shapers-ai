@@ -6,19 +6,21 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
+import {
+  ACCENT_FOREST_GREEN,
+  ACCENT_FOREST_GREEN_HOVER,
+} from "@/const";
+
 export default function HeroSection() {
   return (
     <section id="home" className="scroll-mt-20 pt-14">
       <div className="container flex min-h-[calc(100svh-3.5rem)] items-center pt-8 pb-10 md:pt-10 md:pb-12">
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(420px,640px)] lg:gap-14">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,560px)] lg:gap-16">
           <div>
             {/* Headline */}
             <h1
-              className="max-w-3xl text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.5rem]"
-              style={{
-                fontFamily: "'Space Grotesk', system-ui, sans-serif",
-                color: "#19498a",
-              }}
+              className="font-serif text-3xl font-medium leading-[1.05] tracking-tight sm:text-4xl md:text-[2.9rem] lg:text-[3.2rem]"
+              style={{ color: ACCENT_FOREST_GREEN }}
             >
               Building technology for the businesses that power our
               communities
@@ -34,15 +36,12 @@ export default function HeroSection() {
             <a
               href="#contact"
               className="mt-8 inline-flex items-center gap-2 px-6 py-3 text-sm font-medium tracking-wide text-white transition-colors duration-200 no-underline md:mt-10"
-              style={{
-                fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
-                backgroundColor: "#19498a",
-              }}
+              style={{ backgroundColor: ACCENT_FOREST_GREEN }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = "#143b70";
+                e.currentTarget.style.backgroundColor = ACCENT_FOREST_GREEN_HOVER;
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = "#19498a";
+                e.currentTarget.style.backgroundColor = ACCENT_FOREST_GREEN;
               }}
             >
               Get involved
@@ -50,16 +49,18 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <div className="mx-auto w-full max-w-[640px] lg:mx-0">
-            <div className="mx-auto w-full max-w-[560px] drop-shadow-[0_24px_40px_rgba(0,0,0,0.16)]">
-              <Image
-                src="/hero-cake-shop-cuate.png"
-                alt="Illustration of a cake shop storefront"
-                width={2000}
-                height={2000}
-                className="h-auto w-full"
-                priority
-              />
+          <div className="mx-auto w-full max-w-[640px] lg:mx-0 lg:justify-self-end">
+            <div className="mx-auto w-full max-w-[560px] overflow-hidden rounded-[32px] border border-black/5 drop-shadow-[0_24px_40px_rgba(0,0,0,0.14)]">
+              <div className="relative aspect-[5/4] w-full">
+                <Image
+                  src="/hero-photo.png"
+                  alt="Two small business team members smiling inside their shop"
+                  fill
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

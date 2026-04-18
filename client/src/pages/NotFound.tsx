@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home } from "lucide-react";
 
+import {
+  ACCENT_FOREST_GREEN,
+  ACCENT_FOREST_GREEN_HOVER,
+} from "@/const";
+
 export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
@@ -30,7 +35,14 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button
               asChild
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+              className="text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+              style={{ backgroundColor: ACCENT_FOREST_GREEN }}
+              onMouseEnter={e => {
+                e.currentTarget.style.backgroundColor = ACCENT_FOREST_GREEN_HOVER;
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.backgroundColor = ACCENT_FOREST_GREEN;
+              }}
             >
               <Link href="/">
                 <Home className="w-4 h-4 mr-2" />

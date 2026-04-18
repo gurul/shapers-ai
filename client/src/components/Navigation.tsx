@@ -7,6 +7,12 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+import {
+  APP_BACKGROUND,
+  ACCENT_FOREST_GREEN,
+  ACCENT_FOREST_GREEN_MUTED,
+} from "@/const";
+
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -19,16 +25,16 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white" style={{ backgroundColor: "#ffffff" }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 bg-background"
+      style={{ backgroundColor: APP_BACKGROUND }}
+    >
       <div className="container flex items-center justify-between h-14">
         {/* Logo */}
         <a
           href="#home"
-          className="font-heading text-lg font-bold tracking-tight no-underline"
-          style={{
-            fontFamily: "'Space Grotesk', system-ui, sans-serif",
-            color: "#19498a",
-          }}
+          className="font-serif text-lg font-medium tracking-tight no-underline"
+          style={{ color: ACCENT_FOREST_GREEN }}
         >
           shapers.ai
         </a>
@@ -40,15 +46,12 @@ export default function Navigation() {
               key={link.href}
               href={link.href}
               className="text-sm transition-colors duration-200 no-underline"
-              style={{
-                fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
-                color: "rgba(25, 73, 138, 0.72)",
-              }}
+              style={{ color: ACCENT_FOREST_GREEN_MUTED }}
               onMouseEnter={e => {
-                e.currentTarget.style.color = "#19498a";
+                e.currentTarget.style.color = ACCENT_FOREST_GREEN;
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.color = "rgba(25, 73, 138, 0.72)";
+                e.currentTarget.style.color = ACCENT_FOREST_GREEN_MUTED;
               }}
             >
               {link.label}
@@ -61,7 +64,7 @@ export default function Navigation() {
           className="md:hidden p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
-          style={{ color: "#19498a" }}
+          style={{ color: ACCENT_FOREST_GREEN }}
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -69,7 +72,10 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-white" style={{ backgroundColor: "#ffffff" }}>
+        <div
+          className="md:hidden border-t border-border bg-background"
+          style={{ backgroundColor: APP_BACKGROUND }}
+        >
           <div className="container py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -78,13 +84,13 @@ export default function Navigation() {
                 className="text-sm transition-colors duration-200 no-underline"
                 style={{
                   fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
-                  color: "rgba(25, 73, 138, 0.72)",
+                  color: ACCENT_FOREST_GREEN_MUTED,
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.color = "#19498a";
+                  e.currentTarget.style.color = ACCENT_FOREST_GREEN;
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.color = "rgba(25, 73, 138, 0.72)";
+                  e.currentTarget.style.color = ACCENT_FOREST_GREEN_MUTED;
                 }}
                 onClick={() => setMobileOpen(false)}
               >

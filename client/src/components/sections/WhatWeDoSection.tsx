@@ -5,28 +5,30 @@
 
 import Image from "next/image";
 
+import { ACCENT_FOREST_GREEN, APP_BACKGROUND } from "@/const";
+
 export default function WhatWeDoSection() {
   return (
-    <section className="bg-white py-12 md:py-16" style={{ backgroundColor: "#ffffff" }}>
+    <section
+      className="bg-background py-12 md:py-16"
+      style={{ backgroundColor: APP_BACKGROUND }}
+    >
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
           <div className="order-2 mx-auto w-full max-w-[320px] lg:order-1 lg:max-w-[440px]">
             <Image
-              src="/what-we-do-tech-company-cuate.png"
-              alt="Illustration of a tech company team"
-              width={2000}
-              height={2000}
-              className="h-auto w-full max-h-[320px] object-contain lg:max-h-none"
+              src="/what-photo.png"
+              alt="Amazon Spheres in Seattle"
+              width={1080}
+              height={1080}
+              className="h-auto w-full rounded-[28px] max-h-[320px] object-contain lg:max-h-none"
             />
           </div>
 
           <div className="order-1 max-w-2xl lg:order-2">
             <h2
-              className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
-              style={{
-                fontFamily: "'Outfit', system-ui, sans-serif",
-                color: "#19498a",
-              }}
+              className="font-serif text-2xl font-medium tracking-tight sm:text-3xl md:text-4xl"
+              style={{ color: ACCENT_FOREST_GREEN }}
             >
               What we do
             </h2>

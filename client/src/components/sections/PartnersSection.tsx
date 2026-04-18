@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ACCENT_FOREST_GREEN } from "@/const";
+
 const partners = [
   {
     name: "America's SBDC",
@@ -15,11 +17,8 @@ export default function PartnersSection() {
         <div className="w-full">
           <div className="text-center">
             <h2
-              className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
-              style={{
-                fontFamily: "'Space Grotesk', system-ui, sans-serif",
-                color: "#19498a",
-              }}
+              className="font-serif text-2xl font-medium tracking-tight sm:text-3xl md:text-4xl"
+              style={{ color: ACCENT_FOREST_GREEN }}
             >
               Partners
             </h2>

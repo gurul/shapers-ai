@@ -18,14 +18,16 @@ export default function OurApproachSection() {
     <section className="pt-8 pb-12 md:pt-10 md:pb-16">
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
-          <div className="order-2 mx-auto w-full max-w-[196px] lg:order-1 lg:max-w-[294px]">
-            <Image
-              src="/approach-photo.png"
-              alt="A small business owner standing in a colorful storefront"
-              width={1080}
-              height={1080}
-              className="h-auto w-full rounded-[28px] max-h-[320px] object-contain lg:max-h-none"
-            />
+          <div className="order-2 w-full lg:order-1 lg:max-w-[294px]">
+            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[28px] lg:aspect-auto">
+              <Image
+                src="/approach-photo.png"
+                alt="A small business owner standing in a colorful storefront"
+                width={1080}
+                height={1080}
+                className="h-full w-full object-cover lg:h-auto lg:rounded-[28px]"
+              />
+            </div>
           </div>
 
           <div className="order-1 lg:order-2">

@@ -36,14 +36,16 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="order-2 mx-auto w-full max-w-[260px] lg:mx-0 lg:w-[400px] lg:max-w-none">
-            <Image
-              src="/philosophy-photo.png"
-              alt="Support local business sign"
-              width={1080}
-              height={1080}
-              className="h-auto w-full rounded-[28px] object-contain"
-            />
+          <div className="order-2 w-full lg:mx-0 lg:w-[400px]">
+            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[28px] lg:aspect-auto">
+              <Image
+                src="/philosophy-photo.png"
+                alt="Support local business sign"
+                width={1080}
+                height={1080}
+                className="h-full w-full object-cover lg:h-auto lg:rounded-[28px]"
+              />
+            </div>
           </div>
         </div>
       </div>

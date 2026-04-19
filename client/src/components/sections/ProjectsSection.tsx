@@ -32,7 +32,7 @@ export default function ProjectsSection() {
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-black">
               We&apos;re building out the showcase now. If you&apos;ve helped a
               small business in your community, we&apos;d love to feature the
-              project on shapers.ai.
+              project on Shapers AI.
             </p>
           </div>
 

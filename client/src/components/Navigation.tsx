@@ -36,7 +36,7 @@ export default function Navigation() {
           className="font-serif text-lg font-medium tracking-tight no-underline"
           style={{ color: ACCENT_FOREST_GREEN }}
         >
-          shapers.ai
+          Shapers AI
         </a>
 
         {/* Desktop links */}

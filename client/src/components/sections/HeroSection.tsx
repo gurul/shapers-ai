@@ -28,7 +28,7 @@ export default function HeroSection() {
 
             {/* Subheadline */}
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-black md:mt-8 md:text-lg">
-              shapers.ai is a volunteer team of young professionals in tech,
+              Shapers AI is a volunteer team of young professionals in tech,
               finance, and consulting helping local organizations implement AI.
             </p>
 

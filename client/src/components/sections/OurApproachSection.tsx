@@ -18,14 +18,14 @@ export default function OurApproachSection() {
     <section className="pt-8 pb-12 md:pt-10 md:pb-16">
       <div className="container">
         <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
-          <div className="order-2 w-full lg:order-1 lg:max-w-[294px]">
-            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[28px] lg:aspect-auto">
+          <div className="order-2 w-full lg:order-1">
+            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[28px]">
               <Image
                 src="/approach-photo.png"
                 alt="A small business owner standing in a colorful storefront"
                 width={1080}
                 height={1080}
-                className="h-full w-full object-cover lg:h-auto lg:rounded-[28px]"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>

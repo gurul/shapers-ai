@@ -49,8 +49,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="flex flex-col gap-1.5">
+        <div className="mt-8 flex items-end justify-between gap-4 sm:gap-6">
+          <div className="flex min-w-0 flex-1 flex-col gap-1.5">
             <p className="text-sm text-foreground/62">
               Made with ❤ in Seattle
             </p>
@@ -64,7 +64,7 @@ export default function Footer() {
             alt="Global Shapers"
             width={1080}
             height={1080}
-            className="h-auto w-full max-w-[88px] self-end sm:max-w-[112px] lg:max-w-[128px]"
+            className="h-auto w-[88px] shrink-0 sm:w-[112px] lg:w-[128px]"
             priority
           />
         </div>

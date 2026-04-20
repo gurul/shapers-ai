@@ -64,59 +64,61 @@ export default function TeamSection() {
             {teamMembers.map(member => (
               <div
                 key={member.name}
-                className="flex h-full w-full flex-col rounded-[28px] border border-black/5 bg-white p-6 text-left shadow-[0_18px_40px_rgba(0,0,0,0.05)]"
+                className="mx-auto flex h-full w-full max-w-[320px] flex-col rounded-[28px] border border-black/5 bg-white p-6 text-left shadow-[0_18px_40px_rgba(0,0,0,0.05)]"
               >
-                <div className="overflow-hidden rounded-[24px] border border-black/5 bg-black/5">
-                  <div className="relative aspect-[4/5] w-full">
-                    {member.photo ? (
-                      <Image
-                        src={member.photo}
-                        alt={member.name}
-                        fill
-                        sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 90vw"
-                        className="object-cover"
-                        style={{ objectPosition: member.imagePosition ?? "center" }}
-                      />
-                    ) : (
-                      <div
-                        className="flex h-full w-full items-center justify-center font-serif text-3xl font-medium"
-                        style={{ color: ACCENT_FOREST_GREEN }}
-                      >
-                        {getInitials(member.name)}
-                      </div>
-                    )}
+                <div className="mx-auto flex w-full max-w-[220px] flex-1 flex-col items-center text-center">
+                  <div className="w-full overflow-hidden rounded-[24px] border border-black/5 bg-black/5">
+                    <div className="relative aspect-square w-full">
+                      {member.photo ? (
+                        <Image
+                          src={member.photo}
+                          alt={member.name}
+                          fill
+                          sizes="220px"
+                          className="object-cover"
+                          style={{ objectPosition: member.imagePosition ?? "center" }}
+                        />
+                      ) : (
+                        <div
+                          className="flex h-full w-full items-center justify-center font-serif text-3xl font-medium"
+                          style={{ color: ACCENT_FOREST_GREEN }}
+                        >
+                          {getInitials(member.name)}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                <div className="pt-5">
-                  <p
-                    className="font-serif text-lg font-medium leading-snug"
-                    style={{ color: ACCENT_FOREST_GREEN }}
-                  >
-                    {member.name}
-                  </p>
-                  {member.role ? (
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {member.role}
-                    </p>
-                  ) : null}
-                </div>
-
-                {member.linkedin && (
-                  <div className="mt-auto pt-6">
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium no-underline transition-opacity duration-200 hover:opacity-75"
-                      aria-label={`${member.name} LinkedIn`}
+                  <div className="pt-5">
+                    <p
+                      className="font-serif text-lg font-medium leading-snug"
                       style={{ color: ACCENT_FOREST_GREEN }}
                     >
-                      <Linkedin size={16} />
-                      LinkedIn
-                    </a>
+                      {member.name}
+                    </p>
+                    {member.role ? (
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {member.role}
+                      </p>
+                    ) : null}
                   </div>
-                )}
+
+                  {member.linkedin && (
+                    <div className="mt-auto pt-6">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 text-sm font-medium no-underline transition-opacity duration-200 hover:opacity-75"
+                        aria-label={`${member.name} LinkedIn`}
+                        style={{ color: ACCENT_FOREST_GREEN }}
+                      >
+                        <Linkedin size={16} />
+                        LinkedIn
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>

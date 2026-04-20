@@ -64,9 +64,9 @@ export default function TeamSection() {
             {teamMembers.map(member => (
               <div
                 key={member.name}
-                className="mx-auto flex h-full w-full max-w-[320px] flex-col rounded-[28px] border border-black/5 bg-white p-6 text-left shadow-[0_18px_40px_rgba(0,0,0,0.05)]"
+                className="mx-auto flex w-full max-w-full justify-center sm:max-w-[320px]"
               >
-                <div className="mx-auto flex w-full max-w-[220px] flex-1 flex-col items-center text-center">
+                <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-center text-center sm:max-w-[220px]">
                   <div className="w-full overflow-hidden rounded-[24px] border border-black/5 bg-black/5">
                     <div className="relative aspect-square w-full">
                       {member.photo ? (
@@ -74,7 +74,7 @@ export default function TeamSection() {
                           src={member.photo}
                           alt={member.name}
                           fill
-                          sizes="220px"
+                          sizes="(min-width: 640px) 220px, 100vw"
                           className="object-cover"
                           style={{ objectPosition: member.imagePosition ?? "center" }}
                         />

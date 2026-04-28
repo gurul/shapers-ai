@@ -1,6 +1,6 @@
 /*
  * TeamSection — Swiss minimalist
- * Team roster with initials avatar + LinkedIn link
+ * Team roster with portrait photo + LinkedIn link
  */
 
 import Image from "next/image";
@@ -60,13 +60,13 @@ export default function TeamSection() {
             </h2>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map(member => (
               <div
                 key={member.name}
-                className="mx-auto flex w-full max-w-full justify-center sm:max-w-[320px]"
+                className="mx-auto flex w-full max-w-full justify-center sm:max-w-[360px]"
               >
-                <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-center text-center sm:max-w-[220px]">
+                <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-center text-center sm:max-w-[300px]">
                   <div className="w-full overflow-hidden rounded-[24px] border border-black/5 bg-black/5">
                     <div className="relative aspect-square w-full">
                       {member.photo ? (
@@ -74,7 +74,7 @@ export default function TeamSection() {
                           src={member.photo}
                           alt={member.name}
                           fill
-                          sizes="(min-width: 640px) 220px, 100vw"
+                          sizes="(min-width: 640px) 300px, 100vw"
                           className="object-cover"
                           style={{ objectPosition: member.imagePosition ?? "center" }}
                         />

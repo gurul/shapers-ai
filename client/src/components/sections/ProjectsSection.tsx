@@ -18,6 +18,12 @@ const projectSubmissionFormUrl =
 
 const springrollGithubUrl =
   "https://github.com/shubhkarmanSingh/springroll-receipt-scanner";
+const springrollAddress =
+  "Spring Roll House Deli, 1221 South Main St #104, Seattle, WA 98144";
+const springrollMapUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+  springrollAddress
+)}&output=embed`;
+const springrollMapShareUrl = "https://maps.app.goo.gl/vxZzExPjXZ2J2KXC7";
 
 const springrollTeam = [
   {
@@ -86,14 +92,14 @@ export default function ProjectsSection() {
                   </p>
 
                   <div className="mt-5 flex items-center gap-3">
-                    <div className="flex -space-x-2">
+                    <div className="flex -space-x-3">
                       {springrollTeam.map(member => (
                         <img
                           key={member.name}
                           src={member.photo}
                           alt={member.name}
                           title={member.name}
-                          className="h-10 w-10 rounded-full border-2 border-white object-cover"
+                          className="h-14 w-14 rounded-full border-2 border-white object-cover"
                           style={{ objectPosition: member.imagePosition }}
                         />
                       ))}
@@ -134,6 +140,29 @@ export default function ProjectsSection() {
                       <p className="mt-2">$1-3 per 100 receipts</p>
                     </div>
                   </div>
+
+                  <div
+                    className="mt-3 hidden overflow-hidden border border-border lg:block"
+                    style={{ borderColor: ACCENT_FOREST_GREEN_BORDER }}
+                  >
+                    <iframe
+                      title="SpringRoll House location map"
+                      src={springrollMapUrl}
+                      className="h-[12.65rem] w-full"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
+
+                  <a
+                    href={springrollMapShareUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-2 hidden text-sm font-medium underline-offset-4 hover:underline lg:inline-block"
+                    style={{ color: ACCENT_FOREST_GREEN }}
+                  >
+                    Open Spring Roll House Deli on Google Maps
+                  </a>
                 </div>
 
                 <div className="mt-8 flex">

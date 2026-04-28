@@ -36,14 +36,19 @@ export default function PartnersSection() {
                 className="flex flex-col items-center text-center"
               >
                 <div className="flex w-full items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.alt}
-                    width={1200}
-                    height={692}
-                    className="h-auto w-full max-w-[320px] object-contain sm:max-w-[420px] md:max-w-[500px]"
-                    priority={false}
-                  />
+                  <div
+                    className="overflow-hidden rounded-xl border bg-white p-3"
+                    style={{ borderColor: ACCENT_FOREST_GREEN }}
+                  >
+                    <Image
+                      src={partner.logo}
+                      alt={partner.alt}
+                      width={1200}
+                      height={692}
+                      className="h-auto w-full max-w-[260px] object-contain sm:max-w-[340px] md:max-w-[400px]"
+                      priority={false}
+                    />
+                  </div>
                 </div>
               </div>
             ))}

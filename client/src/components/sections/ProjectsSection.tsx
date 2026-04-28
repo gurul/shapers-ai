@@ -23,7 +23,6 @@ const springrollAddress =
 const springrollMapUrl = `https://www.google.com/maps?q=${encodeURIComponent(
   springrollAddress
 )}&output=embed`;
-const springrollMapShareUrl = "https://maps.app.goo.gl/vxZzExPjXZ2J2KXC7";
 
 const springrollTeam = [
   {
@@ -154,15 +153,6 @@ export default function ProjectsSection() {
                     />
                   </div>
 
-                  <a
-                    href={springrollMapShareUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 hidden text-sm font-medium underline-offset-4 hover:underline lg:inline-block"
-                    style={{ color: ACCENT_FOREST_GREEN }}
-                  >
-                    Open Spring Roll House Deli on Google Maps
-                  </a>
                 </div>
 
                 <div className="mt-8 flex">

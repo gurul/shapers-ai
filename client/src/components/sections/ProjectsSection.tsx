@@ -91,8 +91,8 @@ export default function ProjectsSection() {
                     margins in Google Sheets.
                   </p>
 
-                  <div className="mt-5 flex items-center gap-3">
-                    <div className="flex -space-x-3">
+                  <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                    <div className="flex shrink-0 -space-x-3">
                       {springrollTeam.map(member => (
                         <img
                           key={member.name}
@@ -104,7 +104,7 @@ export default function ProjectsSection() {
                         />
                       ))}
                     </div>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                    <p className="text-sm leading-relaxed text-muted-foreground sm:min-w-0">
                       Built by the Shapers AI Seattle Team
                     </p>
                   </div>

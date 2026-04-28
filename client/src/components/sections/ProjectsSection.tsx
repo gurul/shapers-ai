@@ -1,6 +1,6 @@
 /*
  * ProjectsSection — Swiss minimalist
- * Community showcase submission CTA for featured projects
+ * Community showcase submission CTA for projects
  */
 
 import { ArrowUpRight, Github } from "lucide-react";
@@ -71,19 +71,8 @@ export default function ProjectsSection() {
 
               <div className="flex flex-col justify-between p-6 sm:p-8 md:p-10">
                 <div>
-                  <div
-                    className="inline-flex items-center border px-3 py-2 text-xs font-medium uppercase tracking-[0.18em]"
-                    style={{
-                      borderColor: ACCENT_FOREST_GREEN_BORDER,
-                      color: ACCENT_FOREST_GREEN,
-                      backgroundColor: APP_SECTION_SURFACE,
-                    }}
-                  >
-                    Featured project
-                  </div>
-
                   <h3
-                    className="mt-5 font-serif text-2xl font-medium tracking-tight sm:text-3xl"
+                    className="font-serif text-2xl font-medium tracking-tight sm:text-3xl"
                     style={{ color: ACCENT_FOREST_GREEN }}
                   >
                     SpringRoll House Receipt Scanner

@@ -60,14 +60,14 @@ export default function TeamSection() {
             </h2>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {teamMembers.map(member => (
               <div
                 key={member.name}
                 className="mx-auto flex w-full max-w-full justify-center sm:max-w-[360px]"
               >
-                <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-center text-center sm:max-w-[300px]">
-                  <div className="w-full overflow-hidden rounded-[24px] border border-black/5 bg-black/5">
+                <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-center text-center md:max-w-[300px]">
+                  <div className="hidden w-full overflow-hidden rounded-[24px] border border-black/5 bg-black/5 md:block">
                     <div className="relative aspect-square w-full">
                       {member.photo ? (
                         <Image
@@ -89,13 +89,27 @@ export default function TeamSection() {
                     </div>
                   </div>
 
-                  <div className="pt-5">
-                    <p
-                      className="font-serif text-lg font-medium leading-snug"
-                      style={{ color: ACCENT_FOREST_GREEN }}
-                    >
-                      {member.name}
-                    </p>
+                  <div className="pt-0 md:pt-5">
+                    <div className="inline-flex items-center justify-center gap-2">
+                      <p
+                        className="font-serif text-lg font-medium leading-snug"
+                        style={{ color: ACCENT_FOREST_GREEN }}
+                      >
+                        {member.name}
+                      </p>
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center transition-opacity duration-200 hover:opacity-75 md:hidden"
+                          aria-label={`${member.name} LinkedIn`}
+                          style={{ color: ACCENT_FOREST_GREEN }}
+                        >
+                          <Linkedin size={18} />
+                        </a>
+                      )}
+                    </div>
                     {member.role ? (
                       <p className="mt-1 text-sm text-muted-foreground">
                         {member.role}
@@ -104,7 +118,7 @@ export default function TeamSection() {
                   </div>
 
                   {member.linkedin && (
-                    <div className="mt-auto pt-6">
+                    <div className="mt-auto hidden pt-6 md:block">
                       <a
                         href={member.linkedin}
                         target="_blank"

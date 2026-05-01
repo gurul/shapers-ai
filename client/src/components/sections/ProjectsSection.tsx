@@ -65,8 +65,8 @@ export default function ProjectsSection() {
             className="mt-10 overflow-hidden border border-border bg-white md:mt-12"
             style={{ borderColor: ACCENT_FOREST_GREEN_BORDER }}
           >
-            <div className="grid md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
-              <div className="relative flex min-h-[300px] items-center justify-center border-b border-border bg-white p-4 md:min-h-[440px] md:border-b-0 md:border-r md:p-6">
+            <div className="grid items-stretch md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+              <div className="relative flex min-h-[300px] items-center justify-center border-b border-border bg-white p-4 md:min-h-[440px] md:items-start md:border-b-0 md:border-r md:p-6">
                 <img
                   src="/springroll-receipt-scanner.png"
                   alt="SpringRoll House receipt scanning project"
@@ -74,7 +74,7 @@ export default function ProjectsSection() {
                 />
               </div>
 
-              <div className="flex flex-col justify-between p-6 sm:p-8 md:p-10">
+              <div className="flex h-full flex-col justify-between p-4 sm:p-6 md:p-6">
                 <div>
                   <h3
                     className="font-serif text-2xl font-medium tracking-tight sm:text-3xl"
@@ -83,14 +83,14 @@ export default function ProjectsSection() {
                     SpringRoll House Receipt Scanner
                   </h3>
 
-                  <p className="mt-4 max-w-xl text-base leading-relaxed text-black">
+                  <p className="mt-3 max-w-xl text-base leading-relaxed text-black">
                     An AI receipt pipeline for SpringRoll House Deli that turns
                     phone photos, supplier emails, and CSV exports into clean
                     ingredient purchases, live unit costs, and updated recipe
                     margins in Google Sheets.
                   </p>
 
-                  <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                  <div className="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                     <div className="flex shrink-0 -space-x-3">
                       {springrollTeam.map(member => (
                         <img
@@ -108,8 +108,8 @@ export default function ProjectsSection() {
                     </p>
                   </div>
 
-                  <div className="mt-6 grid gap-3 text-sm leading-relaxed text-black sm:grid-cols-3">
-                    <div className="border border-border p-4">
+                  <div className="mt-5 grid gap-3 text-sm leading-relaxed text-black sm:grid-cols-3">
+                    <div className="border border-border p-3">
                       <p
                         className="text-xs font-medium uppercase tracking-[0.16em]"
                         style={{ color: ACCENT_FOREST_GREEN }}
@@ -118,7 +118,7 @@ export default function ProjectsSection() {
                       </p>
                       <p className="mt-2">Claude Vision, Python, Sheets</p>
                     </div>
-                    <div className="border border-border p-4">
+                    <div className="border border-border p-3">
                       <p
                         className="text-xs font-medium uppercase tracking-[0.16em]"
                         style={{ color: ACCENT_FOREST_GREEN }}
@@ -129,7 +129,7 @@ export default function ProjectsSection() {
                         Scan receipt, map items, update costs
                       </p>
                     </div>
-                    <div className="border border-border p-4">
+                    <div className="border border-border p-3">
                       <p
                         className="text-xs font-medium uppercase tracking-[0.16em]"
                         style={{ color: ACCENT_FOREST_GREEN }}
@@ -147,15 +147,14 @@ export default function ProjectsSection() {
                     <iframe
                       title="SpringRoll House location map"
                       src={springrollMapUrl}
-                      className="h-[12.65rem] w-full"
+                      className="h-[7rem] w-full"
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                     />
                   </div>
-
                 </div>
 
-                <div className="mt-8 flex">
+                <div className="mt-6 flex">
                   <Button
                     asChild
                     size="lg"

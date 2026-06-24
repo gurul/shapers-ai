@@ -10,6 +10,10 @@ import "../client/src/index.css";
 export const metadata: Metadata = {
   title: "Shapers AI",
   description: "Volunteer-built AI and software solutions for organizations.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: {
     title: "Shapers AI",
     description: "Volunteer-built AI and software solutions for organizations.",

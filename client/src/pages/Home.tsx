@@ -1,7 +1,6 @@
 /*
  * Home — Single-page scroll layout
- * Swiss International minimalist: black on white, typographic hierarchy,
- * generous whitespace between sections
+ * Nature-inspired editorial layout with local typography and botanical accents.
  */
 
 import Navigation from "@/components/Navigation";
@@ -19,25 +18,27 @@ import { APP_BACKGROUND } from "@/const";
 
 export default function Home() {
   return (
-    <div
-      className="min-h-screen flex flex-col bg-background"
-      style={{ backgroundColor: APP_BACKGROUND }}
-    >
-      <Navigation />
-      <ScrollProgress />
+    <div className="motion-surface">
+      <div
+        className="min-h-screen flex flex-col bg-background"
+        style={{ backgroundColor: APP_BACKGROUND }}
+      >
+        <Navigation />
+        <ScrollProgress />
 
-      <main className="flex-1">
-        <HeroSection />
-        <WhatWeDoSection />
-        <AboutSection />
-        <OurApproachSection />
-        <TeamSection />
-        <PartnersSection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
+        <main id="main" tabIndex={-1} className="flex-1">
+          <HeroSection />
+          <WhatWeDoSection />
+          <AboutSection />
+          <ProjectsSection />
+          <OurApproachSection />
+          <TeamSection />
+          <PartnersSection />
+          <ContactSection />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }

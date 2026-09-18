@@ -1,68 +1,75 @@
-/*
- * HeroSection — Swiss minimalist
- * Large headline left-aligned with supporting illustration
- */
-
+import BotanicalSprig from "@/components/BotanicalSprig";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-
-import {
-  ACCENT_FOREST_GREEN,
-  ACCENT_FOREST_GREEN_HOVER,
-} from "@/const";
+import { ArrowDown, ArrowUpRight, Asterisk } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="scroll-mt-20 pt-14">
-      <div className="container flex min-h-[calc(100svh-3.5rem)] items-center pt-8 pb-10 md:pt-10 md:pb-12">
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,560px)] lg:gap-16">
-          <div>
-            {/* Headline */}
-            <h1
-              className="font-serif text-3xl font-medium leading-[1.05] tracking-tight sm:text-4xl md:text-[2.9rem] lg:text-[3.2rem]"
-              style={{ color: ACCENT_FOREST_GREEN }}
-            >
-              Building technology for the businesses that power our
-              communities
-            </h1>
-
-            {/* Subheadline */}
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-black md:mt-8 md:text-lg">
-              Shapers AI is a volunteer team of young professionals in tech,
-              finance, and consulting helping local organizations implement AI.
+    <section id="home" className="hero-section">
+      <div className="container">
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">
+              <span className="status-dot" /> People first. Technology for good.
             </p>
-
-            {/* CTA */}
-            <a
-              href="#contact"
-              className="mt-8 inline-flex items-center gap-2 px-6 py-3 text-sm font-medium tracking-wide text-white transition-colors duration-200 no-underline md:mt-10"
-              style={{ backgroundColor: ACCENT_FOREST_GREEN }}
-              onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = ACCENT_FOREST_GREEN_HOVER;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = ACCENT_FOREST_GREEN;
-              }}
-            >
-              Get involved
-              <ArrowRight size={16} />
-            </a>
+            <h1>
+              Big possibilities.
+              <br />
+              For small
+              <br />
+              <em>businesses.</em>
+            </h1>
+            <p className="hero-description">
+              We build practical AI tools for the businesses that power our
+              communities. Volunteer expertise. Real collaboration. Technology
+              you can make your own.
+            </p>
+            <div className="hero-actions">
+              <a href="#contact" className="button">
+                Let’s build together{" "}
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </a>
+              <a href="#projects" className="text-link">
+                Explore our work <ArrowDown size={16} aria-hidden="true" />
+              </a>
+            </div>
           </div>
-
-          <div className="mx-auto w-full max-w-[640px] lg:mx-0 lg:justify-self-end">
-            <div className="mx-auto w-full max-w-[560px] overflow-hidden rounded-[32px] border border-black/5 drop-shadow-[0_24px_40px_rgba(0,0,0,0.14)]">
-              <div className="relative aspect-[5/4] w-full">
+          <div className="hero-visual">
+            <div className="plant-stage hero-plant-stage">
+              <BotanicalSprig className="plant-right" />
+              <BotanicalSprig className="plant-left" />
+              <div className="hero-image">
                 <Image
                   src="/hero-photo.png"
                   alt="Two small business team members smiling inside their shop"
                   fill
-                  sizes="(min-width: 1024px) 560px, 100vw"
-                  className="object-cover object-center"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
                   priority
                 />
               </div>
             </div>
+            <div className="hero-note">
+              <Asterisk size={40} strokeWidth={1.3} aria-hidden="true" />
+              <p>
+                Local businesses.
+                <br />
+                <em>Lasting impact.</em>
+              </p>
+            </div>
+            <p className="image-caption">
+              <span>Built around people, always.</span>
+              <span>01 / Community</span>
+            </p>
           </div>
+        </div>
+        <div className="hero-footnote">
+          <p>
+            An initiative of the <strong>Global Shapers Community</strong>
+          </p>
+          <a href="#what-we-do">
+            Rooted in Seattle. Connected globally.{" "}
+            <ArrowDown size={15} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>

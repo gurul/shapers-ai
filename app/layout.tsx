@@ -1,11 +1,35 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import localFont from "next/font/local";
 import type { ReactNode } from "react";
 
 import Providers from "@/components/Providers";
 import { APP_BACKGROUND } from "@/const";
 
 import "../client/src/index.css";
+
+const displayFont = localFont({
+  src: [
+    {
+      path: "../public/fonts/fraunces.ttf",
+      style: "normal",
+      weight: "100 900",
+    },
+    {
+      path: "../public/fonts/fraunces-italic.ttf",
+      style: "italic",
+      weight: "100 900",
+    },
+  ],
+  variable: "--font-display",
+  display: "swap",
+});
+const bodyFont = localFont({
+  src: "../public/fonts/space-grotesk.ttf",
+  variable: "--font-body",
+  weight: "300 700",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Shapers AI",
@@ -45,7 +69,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body style={{ backgroundColor: APP_BACKGROUND }}>
+      <body
+        className={`${displayFont.variable} ${bodyFont.variable}`}
+        style={{ backgroundColor: APP_BACKGROUND }}
+      >
         <Providers>{children}</Providers>
         {process.env.NODE_ENV !== "production" ? (
           <Script

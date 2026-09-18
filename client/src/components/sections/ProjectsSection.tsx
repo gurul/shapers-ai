@@ -1,29 +1,12 @@
-/*
- * ProjectsSection — Swiss minimalist
- * Community showcase submission CTA for projects
- */
-
-import { ArrowUpRight, Github } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import {
-  APP_SECTION_SURFACE,
-  ACCENT_FOREST_GREEN,
-  ACCENT_FOREST_GREEN_BORDER,
-  ACCENT_FOREST_GREEN_HOVER,
-} from "@/const";
+import Image from "next/image";
+import { ArrowUpRight, Github, MapPin } from "lucide-react";
 
 const projectSubmissionFormUrl =
   "https://docs.google.com/forms/d/e/1FAIpQLScG9KWFWLTd-lMMGFCS8pLGXodeJah9YNRvQB8LMnfxbtudAg/viewform?usp=publish-editor";
-
 const springrollGithubUrl =
   "https://github.com/shubhkarmanSingh/springroll-receipt-scanner";
 const springrollAddress =
   "Spring Roll House Deli, 1221 South Main St #104, Seattle, WA 98144";
-const springrollMapUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-  springrollAddress
-)}&output=embed`;
-
 const springrollTeam = [
   {
     name: "Rachel Kloepfer",
@@ -41,188 +24,116 @@ const springrollTeam = [
     imagePosition: "center 18%",
   },
 ];
-
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="scroll-mt-20 py-12 md:py-16">
+    <section id="projects" className="section-pad">
       <div className="container">
-        <div className="w-full">
-          <div className="text-center">
-            <h2
-              className="font-serif text-2xl font-medium tracking-tight sm:text-3xl md:text-4xl"
-              style={{ color: ACCENT_FOREST_GREEN }}
-            >
-              What We&apos;ve Built
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">03 / Our work in the world</p>
+            <h2>
+              Real tools.
+              <br />
+              <em>Real local impact.</em>
             </h2>
-
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-black">
-              Practical AI projects built with small businesses, local
-              operators, and community partners.
+          </div>
+          <p className="section-intro">
+            Practical projects, built alongside the people who use them. Here’s
+            what that looks like.
+          </p>
+        </div>
+        <article className="project-card">
+          <div className="project-visual">
+            <div className="project-visual-label">
+              <span className="status-dot" /> Built in Seattle
+              <span>Featured project / 01</span>
+            </div>
+            <div className="project-screenshot">
+              <Image
+                src="/springroll-receipt-scanner.png"
+                alt="Two people at SpringRoll House Deli"
+                width={1200}
+                height={1200}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
+            <p className="project-visual-footer">
+              Less paperwork. More room for what matters.
             </p>
           </div>
-
-          <div
-            className="mt-10 overflow-hidden border border-border bg-white md:mt-12"
-            style={{ borderColor: ACCENT_FOREST_GREEN_BORDER }}
-          >
-            <div className="grid items-stretch md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
-              <div className="relative flex min-h-[300px] items-center justify-center border-b border-border bg-white p-4 md:min-h-[440px] md:items-start md:border-b-0 md:border-r md:p-6">
-                <img
-                  src="/springroll-receipt-scanner.png"
-                  alt="SpringRoll House receipt scanning project"
-                  className="max-h-full w-full object-contain"
-                />
+          <div className="project-copy">
+            <span className="tag">AI & automation</span>
+            <h3>
+              Good food.
+              <br />
+              <em>Smarter bookkeeping.</em>
+            </h3>
+            <p className="project-name">SpringRoll House Receipt Scanner</p>
+            <p>
+              An AI receipt pipeline that turns phone photos, supplier emails,
+              and CSV exports into clean ingredient purchases, live unit costs,
+              and updated recipe margins in Google Sheets.
+            </p>
+            <dl className="project-details">
+              <div>
+                <dt>Built with</dt>
+                <dd>Claude Vision · Python · Sheets</dd>
               </div>
-
-              <div className="flex h-full flex-col justify-between p-4 sm:p-6 md:p-6">
-                <div>
-                  <h3
-                    className="font-serif text-2xl font-medium tracking-tight sm:text-3xl"
-                    style={{ color: ACCENT_FOREST_GREEN }}
-                  >
-                    SpringRoll House Receipt Scanner
-                  </h3>
-
-                  <p className="mt-3 max-w-xl text-base leading-relaxed text-black">
-                    An AI receipt pipeline for SpringRoll House Deli that turns
-                    phone photos, supplier emails, and CSV exports into clean
-                    ingredient purchases, live unit costs, and updated recipe
-                    margins in Google Sheets.
-                  </p>
-
-                  <div className="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-                    <div className="flex shrink-0 -space-x-3">
-                      {springrollTeam.map(member => (
-                        <img
-                          key={member.name}
-                          src={member.photo}
-                          alt={member.name}
-                          title={member.name}
-                          className="h-14 w-14 rounded-full border-2 border-white object-cover"
-                          style={{ objectPosition: member.imagePosition }}
-                        />
-                      ))}
-                    </div>
-                    <p className="text-sm leading-relaxed text-muted-foreground sm:min-w-0">
-                      Built by the Shapers AI Seattle Team
-                    </p>
-                  </div>
-
-                  <div className="mt-5 grid gap-3 text-sm leading-relaxed text-black sm:grid-cols-3">
-                    <div className="border border-border p-3">
-                      <p
-                        className="text-xs font-medium uppercase tracking-[0.16em]"
-                        style={{ color: ACCENT_FOREST_GREEN }}
-                      >
-                        Stack
-                      </p>
-                      <p className="mt-2">Claude Vision, Python, Sheets</p>
-                    </div>
-                    <div className="border border-border p-3">
-                      <p
-                        className="text-xs font-medium uppercase tracking-[0.16em]"
-                        style={{ color: ACCENT_FOREST_GREEN }}
-                      >
-                        Flow
-                      </p>
-                      <p className="mt-2">
-                        Scan receipt, map items, update costs
-                      </p>
-                    </div>
-                    <div className="border border-border p-3">
-                      <p
-                        className="text-xs font-medium uppercase tracking-[0.16em]"
-                        style={{ color: ACCENT_FOREST_GREEN }}
-                      >
-                        Cost
-                      </p>
-                      <p className="mt-2">$1-3 per 100 receipts</p>
-                    </div>
-                  </div>
-
-                  <div
-                    className="mt-3 hidden overflow-hidden border border-border lg:block"
-                    style={{ borderColor: ACCENT_FOREST_GREEN_BORDER }}
-                  >
-                    <iframe
-                      title="SpringRoll House location map"
-                      src={springrollMapUrl}
-                      className="h-[7rem] w-full"
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-6 flex">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium tracking-wide text-white"
-                    style={{ backgroundColor: ACCENT_FOREST_GREEN }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.backgroundColor =
-                        ACCENT_FOREST_GREEN_HOVER;
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.backgroundColor =
-                        ACCENT_FOREST_GREEN;
-                    }}
-                  >
-                    <a
-                      href={springrollGithubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      View on GitHub
-                      <Github size={16} />
-                    </a>
-                  </Button>
-                </div>
+              <div>
+                <dt>Running cost</dt>
+                <dd>$1–3 per 100 receipts</dd>
               </div>
+            </dl>
+            <div className="project-team">
+              <div className="avatar-stack">
+                {springrollTeam.map(member => (
+                  <Image
+                    key={member.name}
+                    src={member.photo}
+                    alt={member.name}
+                    title={member.name}
+                    width={36}
+                    height={36}
+                    style={{ objectPosition: member.imagePosition }}
+                  />
+                ))}
+              </div>
+              <span>Built by our Seattle team</span>
             </div>
-          </div>
-
-          <div
-            className="mt-6 flex flex-col gap-5 border border-border bg-white p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"
-            style={{ backgroundColor: APP_SECTION_SURFACE }}
-          >
-            <div className="max-w-2xl">
-              <p
-                className="text-xs font-medium uppercase tracking-[0.18em]"
-                style={{ color: ACCENT_FOREST_GREEN }}
-              >
-                Submit a project
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-black sm:text-base">
-                Built something useful for a local business? Send the project, a
-                short note, and any visuals we can feature.
-              </p>
-            </div>
-
-            <Button
-              asChild
-              size="lg"
-              className="inline-flex shrink-0 items-center gap-2 px-6 py-3 text-sm font-medium tracking-wide text-white"
-              style={{ backgroundColor: ACCENT_FOREST_GREEN }}
-              onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor =
-                  ACCENT_FOREST_GREEN_HOVER;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = ACCENT_FOREST_GREEN;
-              }}
-            >
+            <div className="project-links">
               <a
-                href={projectSubmissionFormUrl}
+                href={springrollGithubUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                className="text-link"
               >
-                Open form
-                <ArrowUpRight size={16} />
+                Explore the project <Github size={17} aria-hidden="true" />
               </a>
-            </Button>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(springrollAddress)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="location-link"
+              >
+                <MapPin size={14} aria-hidden="true" /> Seattle, WA
+              </a>
+            </div>
           </div>
+        </article>
+        <div className="project-submit">
+          <p>
+            Built something that makes a difference?{" "}
+            <span>We’d love to see it.</span>
+          </p>
+          <a
+            href={projectSubmissionFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            Share your project <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>

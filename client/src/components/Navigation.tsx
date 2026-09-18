@@ -1,105 +1,89 @@
-/*
- * Navigation — Swiss minimalist style
- * Fixed top nav, pure black on white
- * Logo left, links right, hamburger on mobile
- */
-
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-
-import {
-  APP_BACKGROUND,
-  ACCENT_FOREST_GREEN,
-  ACCENT_FOREST_GREEN_MUTED,
-} from "@/const";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Asterisk, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Team", href: "#team" },
-  { label: "Projects", href: "#projects" },
-  { label: "Get Involved", href: "#contact" },
+  { label: "Our story", href: "#about" },
+  { label: "Our work", href: "#projects" },
+  { label: "Our team", href: "#team" },
 ];
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && mobileOpen) {
+        setMobileOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMobileOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [mobileOpen]);
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-background"
-      style={{ backgroundColor: APP_BACKGROUND }}
-    >
-      <div className="container flex items-center justify-between h-14">
-        {/* Logo */}
+    <header className="site-header">
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+      <nav aria-label="Main navigation" className="container nav-inner">
         <a
           href="#home"
-          className="font-serif text-lg font-medium tracking-tight no-underline"
-          style={{ color: ACCENT_FOREST_GREEN }}
+          className="brand"
+          onClick={() => setMobileOpen(false)}
+          aria-label="Shapers AI home"
         >
-          Shapers AI
+          <Asterisk size={35} strokeWidth={1.7} aria-hidden="true" />
+          <span>
+            shapers<span className="brand-ai"> ai</span>
+          </span>
         </a>
-
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm transition-colors duration-200 no-underline"
-              style={{ color: ACCENT_FOREST_GREEN_MUTED }}
-              onMouseEnter={e => {
-                e.currentTarget.style.color = ACCENT_FOREST_GREEN;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.color = ACCENT_FOREST_GREEN_MUTED;
-              }}
-            >
+        <div className="desktop-nav">
+          {navLinks.map(link => (
+            <a key={link.href} href={link.href} className="nav-link">
               {link.label}
             </a>
           ))}
+          <a href="#contact" className="button button-small">
+            Get involved <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
         </div>
-
-        {/* Mobile hamburger */}
         <button
-          className="md:hidden p-1"
+          ref={toggleRef}
+          className="menu-toggle"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-          style={{ color: ACCENT_FOREST_GREEN }}
         >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div
-          className="md:hidden border-t border-border bg-background"
-          style={{ backgroundColor: APP_BACKGROUND }}
-        >
-          <div className="container py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
+      </nav>
+      <div id="mobile-navigation" className="mobile-nav" hidden={!mobileOpen}>
+        <div className="container">
+          {[...navLinks, { label: "Get involved", href: "#contact" }].map(
+            link => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm transition-colors duration-200 no-underline"
-                style={{
-                  fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
-                  color: ACCENT_FOREST_GREEN_MUTED,
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.color = ACCENT_FOREST_GREEN;
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.color = ACCENT_FOREST_GREEN_MUTED;
-                }}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
+                <ArrowUpRight size={18} aria-hidden="true" />
               </a>
-            ))}
-          </div>
+            )
+          )}
         </div>
-      )}
-    </nav>
+      </div>
+    </header>
   );
 }

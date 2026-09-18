@@ -1,71 +1,48 @@
 import Image from "next/image";
-import { ExternalLink, Instagram } from "lucide-react";
-
-/*
- * Footer — editorial closing section
- * Dark field, reflective manifesto copy, oversized final statement
- */
-
+import { ArrowUpRight, Asterisk } from "lucide-react";
+const links = [
+  { label: "Instagram", href: "https://www.instagram.com/shapers.ai/" },
+  { label: "Seattle Shapers", href: "https://www.seattleshapers.org/" },
+  { label: "Global Shapers", href: "https://www.globalshapers.org/home" },
+];
 export default function Footer() {
-  const lastUpdated = process.env.NEXT_PUBLIC_LAST_UPDATED ?? "Unavailable";
-
   return (
-    <footer className="text-foreground">
-      <div className="container py-8 sm:py-10 lg:py-12">
-        <div>
-          <div className="max-w-xs">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-foreground/45">
-              Connect
-            </p>
-            <div className="mt-3 flex flex-col gap-3">
-              <a
-                href="https://www.instagram.com/shapers.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
-              >
-                <Instagram size={16} />
-                Instagram
-              </a>
-              <a
-                href="https://www.seattleshapers.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
-              >
-                <ExternalLink size={16} />
-                Seattle Shapers
-              </a>
-              <a
-                href="https://www.globalshapers.org/home"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-sm text-foreground/72 transition-colors duration-200 no-underline hover:text-foreground"
-              >
-                <ExternalLink size={16} />
-                Global Shapers
-              </a>
-            </div>
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-top">
+          <div>
+            <a href="#home" className="brand">
+              <Asterisk size={32} strokeWidth={1.7} aria-hidden="true" />
+              <span>
+                shapers<span className="brand-ai"> ai</span>
+              </span>
+            </a>
+            <p>Small teams. Useful tools. Stronger communities.</p>
           </div>
+          <nav aria-label="Social links">
+            {links.map(link => (
+              <a
+                href={link.href}
+                key={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label}
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+            ))}
+          </nav>
         </div>
-
-        <div className="mt-8 flex items-end justify-between gap-4 sm:gap-6">
-          <div className="flex min-w-0 flex-1 flex-col gap-1.5">
-            <p className="text-sm text-foreground/62">
-              Made with ❤ in Seattle
-            </p>
-            <p className="text-xs text-foreground/45">
-              Last updated: {lastUpdated}
-            </p>
-          </div>
-
+        <div className="footer-bottom">
+          <p>
+            Made with care in Seattle.<span> A Global Shapers initiative.</span>
+          </p>
           <Image
             src="/footer-global-shapers.png"
-            alt="Global Shapers"
+            alt="Global Shapers Community"
             width={1080}
             height={1080}
-            className="h-auto w-[88px] shrink-0 sm:w-[112px] lg:w-[128px]"
-            priority
+            className="footer-logo"
           />
         </div>
       </div>

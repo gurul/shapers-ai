@@ -1,63 +1,58 @@
-/*
- * WhatWeDoSection — the "who & what" detail block
- * Image left, text right
- */
+import { ArrowUpRight, Code2, ReceiptText, Workflow } from "lucide-react";
 
-import Image from "next/image";
-
-import { ACCENT_FOREST_GREEN, APP_BACKGROUND } from "@/const";
+const services = [
+  {
+    icon: ReceiptText,
+    title: "Make the everyday easier",
+    text: "Receipt scanners and inventory tools that turn paperwork into useful information.",
+  },
+  {
+    icon: Workflow,
+    title: "Give time back",
+    text: "Simple workflows that take repetitive tasks off a business owner’s plate.",
+  },
+  {
+    icon: Code2,
+    title: "Build something that fits",
+    text: "Websites and lightweight software shaped around the way a business actually works.",
+  },
+];
 
 export default function WhatWeDoSection() {
   return (
-    <section
-      className="bg-background py-12 md:py-16"
-      style={{ backgroundColor: APP_BACKGROUND }}
-    >
+    <section id="what-we-do" className="section-pad">
       <div className="container">
-        <div className="grid items-center gap-10 lg:grid-cols-[476px_minmax(0,1fr)] lg:gap-16">
-          <div className="order-2 w-full lg:order-1">
-            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[28px]">
-              <Image
-                src="/what-photo.png"
-                alt="Amazon Spheres in Seattle"
-                width={1080}
-                height={1080}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="order-1 max-w-2xl lg:order-2">
-            <h2
-              className="font-serif text-2xl font-medium tracking-tight sm:text-3xl md:text-4xl"
-              style={{ color: ACCENT_FOREST_GREEN }}
-            >
-              What we do
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">01 / What we do</p>
+            <h2>
+              Small business.
+              <br />
+              <em>Purpose-built tools.</em>
             </h2>
-
-            <div className="mt-8 space-y-7 text-base leading-relaxed text-black md:text-[1.08rem]">
-              <p>
-                Small businesses often run analog because modern software is
-                built for companies 100x their size. We change that. We pair
-                engineers, designers, and strategists with local businesses to
-                scope, build, and deploy lightweight tools—like receipt
-                scanners, inventory systems, and websites.
-              </p>
-              <p>Simple, useful software, built fast and handed over.</p>
-              <p>
-                The project is led by the Seattle hub of the World Economic
-                Forum&apos;s Global Shapers Community. Global Shapers is a
-                worldwide network of roughly 15,000 young professionals
-                organized into city-based hubs running community impact
-                projects.
-              </p>
-              <p>
-                Today, <strong>hubs across every continent</strong> have joined
-                the project, expanding our reach globally.
-              </p>
-            </div>
           </div>
+          <p className="section-intro">
+            Modern software is often built for companies 100 times their size.
+            We pair local businesses with engineers, designers, and strategists
+            to change that.
+          </p>
         </div>
+        <div className="services-grid">
+          {services.map(({ icon: Icon, title, text }, i) => (
+            <article className="service" key={title}>
+              <div className="service-top">
+                <Icon size={26} strokeWidth={1.4} aria-hidden="true" />
+                <span>0{i + 1}</span>
+              </div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <a href="#contact" className="text-link section-link">
+          Have a challenge in mind? Let’s talk{" "}
+          <ArrowUpRight size={17} aria-hidden="true" />
+        </a>
       </div>
     </section>
   );

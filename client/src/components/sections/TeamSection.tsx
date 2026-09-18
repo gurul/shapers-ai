@@ -1,22 +1,6 @@
-/*
- * TeamSection — Swiss minimalist
- * Team roster with portrait photo + LinkedIn link
- */
-
 import Image from "next/image";
-import { Linkedin } from "lucide-react";
-
-import { ACCENT_FOREST_GREEN } from "@/const";
-
-interface TeamMember {
-  name: string;
-  role?: string;
-  linkedin?: string;
-  photo?: string;
-  imagePosition?: string;
-}
-
-const teamMembers: TeamMember[] = [
+import { ArrowUpRight } from "lucide-react";
+const teamMembers = [
   {
     name: "Rachel Kloepfer",
     linkedin: "https://www.linkedin.com/in/rachelkloepfer/",
@@ -36,106 +20,55 @@ const teamMembers: TeamMember[] = [
     imagePosition: "center 18%",
   },
 ];
-
-function getInitials(name: string) {
-  return name
-    .split(" ")
-    .map(n => n[0])
-    .join("")
-    .toUpperCase()
-    .slice(0, 2);
-}
-
 export default function TeamSection() {
   return (
-    <section id="team" className="scroll-mt-20 py-12 md:py-16">
+    <section id="team" className="section-pad team-section">
       <div className="container">
-        <div className="w-full">
-          <div className="text-center">
-            <h2
-              className="font-serif text-2xl font-medium tracking-tight sm:text-3xl md:text-4xl"
-              style={{ color: ACCENT_FOREST_GREEN }}
-            >
-              The Team
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">05 / The people behind it</p>
+            <h2>
+              Different skills.
+              <br />
+              <em>Shared purpose.</em>
             </h2>
           </div>
-
-          <div className="mt-8 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-            {teamMembers.map(member => (
-              <div
-                key={member.name}
-                className="mx-auto flex w-full max-w-full justify-center sm:max-w-[360px]"
+          <p className="section-intro">
+            We’re a volunteer team of young professionals in tech, finance, and
+            consulting, making time for the communities we call home.
+          </p>
+        </div>
+        <div className="team-grid">
+          {teamMembers.map(member => (
+            <article className="team-card" key={member.name}>
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${member.name} on LinkedIn`}
               >
-                <div className="mx-auto flex w-full max-w-full flex-1 flex-col items-center text-center md:max-w-[300px]">
-                  <div className="hidden w-full overflow-hidden rounded-[24px] border border-black/5 bg-black/5 md:block">
-                    <div className="relative aspect-square w-full">
-                      {member.photo ? (
-                        <Image
-                          src={member.photo}
-                          alt={member.name}
-                          fill
-                          sizes="(min-width: 640px) 300px, 100vw"
-                          className="object-cover"
-                          style={{ objectPosition: member.imagePosition ?? "center" }}
-                        />
-                      ) : (
-                        <div
-                          className="flex h-full w-full items-center justify-center font-serif text-3xl font-medium"
-                          style={{ color: ACCENT_FOREST_GREEN }}
-                        >
-                          {getInitials(member.name)}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="pt-0 md:pt-5">
-                    <div className="inline-flex items-center justify-center gap-2">
-                      <p
-                        className="font-serif text-lg font-medium leading-snug"
-                        style={{ color: ACCENT_FOREST_GREEN }}
-                      >
-                        {member.name}
-                      </p>
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center transition-opacity duration-200 hover:opacity-75 md:hidden"
-                          aria-label={`${member.name} LinkedIn`}
-                          style={{ color: ACCENT_FOREST_GREEN }}
-                        >
-                          <Linkedin size={18} />
-                        </a>
-                      )}
-                    </div>
-                    {member.role ? (
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {member.role}
-                      </p>
-                    ) : null}
-                  </div>
-
-                  {member.linkedin && (
-                    <div className="mt-auto hidden pt-6 md:block">
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 text-sm font-medium no-underline transition-opacity duration-200 hover:opacity-75"
-                        aria-label={`${member.name} LinkedIn`}
-                        style={{ color: ACCENT_FOREST_GREEN }}
-                      >
-                        <Linkedin size={16} />
-                        LinkedIn
-                      </a>
-                    </div>
-                  )}
+                <div className="team-photo">
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover"
+                    style={{ objectPosition: member.imagePosition }}
+                  />
                 </div>
-              </div>
-            ))}
-          </div>
+                <div className="team-card-caption">
+                  <div>
+                    <h3>{member.name}</h3>
+                    <p>Seattle hub · Global Shapers</p>
+                  </div>
+                  <span className="team-arrow">
+                    <ArrowUpRight size={21} aria-hidden="true" />
+                  </span>
+                </div>
+              </a>
+            </article>
+          ))}
         </div>
       </div>
     </section>

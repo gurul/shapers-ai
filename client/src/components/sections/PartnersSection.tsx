@@ -12,9 +12,9 @@ export default function PartnersSection() {
           </h2>
         </div>
         <p>
-          Led by the Seattle hub of the Global Shapers Community, with hubs
-          across every continent joining in. We work alongside local partners
-          who help small businesses grow.
+          Led by the Seattle hub of the Global Shapers Community, with
+          established partnerships in India, China, and Germany. Together with
+          local partners, we help small businesses grow across borders.
         </p>
         <div className="partner-logo">
           <Image
@@ -26,6 +26,34 @@ export default function PartnersSection() {
             className="h-auto w-full"
           />
         </div>
+        <figure className="partnership-map">
+          <div className="partnership-map-heading">
+            <span>Connected across borders</span>
+            <span className="partnership-map-status">
+              <span aria-hidden="true" />
+              Live &amp; growing
+            </span>
+          </div>
+          <Image
+            src="/partnership-map.svg"
+            alt="World map highlighting established partnerships in India, China, and Germany, with the Seattle hub marked separately."
+            width={1000}
+            height={450}
+            sizes="(max-width: 767px) 100vw, 1100px"
+            className="partnership-map-image"
+          />
+          <figcaption className="partnership-map-caption">
+            <ul aria-label="Established partnership countries">
+              <li>India</li>
+              <li>China</li>
+              <li>Germany</li>
+            </ul>
+            <p>
+              Our network is live. This map is updated as new registrations come
+              in.
+            </p>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

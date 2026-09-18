@@ -36,7 +36,7 @@ export default function PartnersSection() {
           </div>
           <Image
             src="/partnership-map.svg"
-            alt="World map highlighting established partnerships in India, China, and Germany, with the Seattle hub marked separately."
+            alt="World map with India, China, and Germany filled in to show established partnerships."
             width={1000}
             height={450}
             sizes="(max-width: 767px) 100vw, 1100px"

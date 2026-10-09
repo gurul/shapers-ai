@@ -3,6 +3,7 @@ import { ArrowUpRight, Asterisk, Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Our story", href: "#about" },
+  { label: "Our clients", href: "#clients" },
   { label: "Our team", href: "#team" },
 ];
 

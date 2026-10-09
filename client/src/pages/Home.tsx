@@ -12,6 +12,7 @@ import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import OurApproachSection from "@/components/sections/OurApproachSection";
 import TeamSection from "@/components/sections/TeamSection";
 import PartnersSection from "@/components/sections/PartnersSection";
+import ClientsSection from "@/components/sections/ClientsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import { APP_BACKGROUND } from "@/const";
 
@@ -29,6 +30,7 @@ export default function Home() {
           <HeroSection />
           <WhatWeDoSection />
           <AboutSection />
+          <ClientsSection />
           <OurApproachSection />
           <TeamSection />
           <PartnersSection />

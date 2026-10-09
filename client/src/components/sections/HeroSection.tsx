@@ -28,7 +28,7 @@ export default function HeroSection() {
                 Let’s build together{" "}
                 <ArrowUpRight size={18} aria-hidden="true" />
               </a>
-              <a href="#what-we-do" className="text-link">
+              <a href="#clients" className="text-link">
                 Explore our work <ArrowDown size={16} aria-hidden="true" />
               </a>
             </div>

@@ -26,7 +26,7 @@ export default function TeamSection() {
       <div className="container">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">04 / The people behind it</p>
+            <p className="eyebrow">05 / The people behind it</p>
             <h2>
               Different skills.
               <br />

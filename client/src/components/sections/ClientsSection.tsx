@@ -54,9 +54,6 @@ export default function ClientsSection() {
                 className="h-auto w-full"
               />
             </div>
-            <p className="project-visual-footer">
-              Less paperwork. More room for what matters.
-            </p>
           </div>
           <div className="project-copy">
             <span className="tag">Client · AI enablement</span>

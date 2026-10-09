@@ -550,12 +550,6 @@ a {
   border-radius: 5px;
   box-shadow: 0 14px 35px #294b3c12;
 }
-.project-visual-footer {
-  font-family: var(--font-display), Georgia, serif;
-  font-style: italic;
-  font-size: 17px;
-  text-align: center;
-}
 .project-copy {
   padding: 40px;
 }

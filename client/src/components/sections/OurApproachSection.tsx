@@ -23,7 +23,7 @@ export default function OurApproachSection() {
     <section id="approach" className="section-pad approach-section">
       <div className="container approach-grid">
         <div>
-          <p className="eyebrow">04 / How it works</p>
+          <p className="eyebrow">03 / How it works</p>
           <h2>
             A little expertise.
             <br />

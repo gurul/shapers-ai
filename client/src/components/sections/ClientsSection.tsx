@@ -44,15 +44,25 @@ export default function ClientsSection() {
               <span className="status-dot" /> Seattle, WA
               <span>Featured client / 01</span>
             </div>
-            <div className="project-screenshot">
-              <Image
-                src="/springroll-receipt-scanner.png"
-                alt="Two people at SpringRoll House Deli"
-                width={1199}
-                height={1312}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="h-auto w-full"
-              />
+            <div className="project-photo-pair">
+              <div className="project-screenshot">
+                <Image
+                  src="/springroll-receipt-scanner.png"
+                  alt="Two people at SpringRoll House Deli"
+                  width={1199}
+                  height={1312}
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                />
+              </div>
+              <div className="project-screenshot">
+                <Image
+                  src="/springroll-storefront.png"
+                  alt="The SpringRoll House Deli counter, menu board and sauces"
+                  width={750}
+                  height={1000}
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                />
+              </div>
             </div>
           </div>
           <div className="project-copy">

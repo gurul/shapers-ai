@@ -48,8 +48,8 @@ export default function ClientsSection() {
               <Image
                 src="/springroll-receipt-scanner.png"
                 alt="Two people at SpringRoll House Deli"
-                width={1200}
-                height={1200}
+                width={1199}
+                height={1312}
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="h-auto w-full"
               />
@@ -59,8 +59,6 @@ export default function ClientsSection() {
             <span className="tag">Client · AI enablement</span>
             <h3>
               SpringRoll House
-              <br />
-              <em>Deli.</em>
             </h3>
             <p>
               A neighborhood deli in Seattle. We assisted their team with AI

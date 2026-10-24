@@ -31,6 +31,12 @@ const teamMembers = [
     photo: "/team-sam.png",
     imagePosition: "center top",
   },
+  {
+    name: "Ellen Yan",
+    linkedin: "https://www.linkedin.com/in/ellenyanyw/",
+    photo: "/team-ellen.png",
+    imagePosition: "center top",
+  },
 ];
 export default function TeamSection() {
   return (

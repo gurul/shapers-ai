@@ -19,6 +19,18 @@ const teamMembers = [
     photo: "/team-guru.png",
     imagePosition: "center 18%",
   },
+  {
+    name: "Tim Bombeli",
+    linkedin: "https://www.linkedin.com/in/timbombeli/",
+    photo: "/team-tim.png",
+    imagePosition: "left center",
+  },
+  {
+    name: "Samridh Bhattacharjee",
+    linkedin: "https://www.linkedin.com/in/samridhb/",
+    photo: "/team-sam.png",
+    imagePosition: "center top",
+  },
 ];
 export default function TeamSection() {
   return (
@@ -52,7 +64,7 @@ export default function TeamSection() {
                     src={member.photo}
                     alt={member.name}
                     fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover"
                     style={{ objectPosition: member.imagePosition }}
                   />

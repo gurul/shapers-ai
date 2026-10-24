@@ -960,6 +960,9 @@ a {
   }
 }
 @media (max-width: 1023px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .hero-grid {
     gap: 35px;
     padding: 55px 0;

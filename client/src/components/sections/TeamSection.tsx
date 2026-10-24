@@ -76,7 +76,7 @@ export default function TeamSection() {
                     src={member.photo}
                     alt={member.name}
                     fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover"
                     style={{ objectPosition: member.imagePosition }}
                   />
